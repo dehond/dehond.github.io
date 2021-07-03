@@ -3,10 +3,14 @@ layout: post
 title:  "arXiv dispatch #0"
 date:   2021-07-02 8:00:00 -0400
 categories: arxiv
-excerpt: Optimal control of nuclear qudecimals • Quantum chaology • Spin transport
+excerpt: "In which we learn about: optimal control of nuclear spins • many-body quantum chaology • spin transport under microscopes."
 ---
+
+Each week more papers appear on the arXiv than one could hope to read in a lifetime, still, one can aspire. Here's a subjective and quasi-random sampling (mostly constrained to quant-gas, atom-ph, and quant-phys).
+
 **Quantum Optimal Control of Nuclear Spin Qudecimals in $^{87}$Sr**  
-Omanakuttan *et al.*, [arXiv:2106.13705](https://arxiv.org/abs/2106.13705)
+Omanakuttan *et al.*, [arXiv:2106.13705](https://arxiv.org/abs/2106.13705)  
+The qudit (a quantum particle with a $D$ states) forms a natural extension of the qubit. Naturally, given their more complicated level structure, more information can be stored in them, and they would be suitable candidates for error correction. Enter fermionic strontium! Not only does it have a nuclear spin of $I = 9/2$, making it a qudecimal (a 10-dimensional qubit), it also doesn't have any orbital angular momentum, which means that it doesn't strongly couple to external magnetic fields. An issue with qudits, though, is that there's no set of operators that can take you from any initial state to any final state. Omanakuttan *et al.* tackle this problem through optimal control: by using a combination of a tensor AC Stark shift and an RF field with controllable phase they show their proposal can prepare random target states with high fidelity.
 
 **Probing many-body quantum chaos with quantum simulators**  
 Joshi *et al.*, [arXiv:2106.15530](https://arxiv.org/abs/2106.15530)  
@@ -14,4 +18,6 @@ A key question surrounding quantum many-body systems is how they do or do not th
 
 **Quantum gas microscopy of Kardar--Parisi--Zhang superdiffusion**  
 Wei *et al.*, [arXiv:2107.00038](https://arxiv.org/abs/2107.00038)  
-Using the single-site resolution afforded by a quantum gas microscope, Wei *et al.* investigated spin transport in the one-dimensional Heisenberg Hamiltonian. They realize their Hamiltonian by using two different hyperfine states of rubidium, which are prepared on either side of a domain wall in their Mott insulator with a single atom per site. By looking at how this spin distribution relaxes they investigated the scaling of the spin transport (essentially asking: what is the probability $P(t)$ for a spin to end up on the wrong side of the domain wall?). This probability scales with a critical exponent, i.e. $P(t) \propto t^{1/z}$, which they found to equal 1.5 in the 1D Heisenberg system. This is consistent with the so-called Kardar--Parisi--Zhang equation, which describes a number of seemingly unrelated physical phenomena. In the spirit of 'understand your system by making it go kaputt,' they either injected spin impurities in the initial state, or turned on a coupling between chains, which changed the scaling of the transport that ensued.
+Using the single-site resolution afforded by a quantum gas microscope, Wei *et al.* investigated spin transport in the one-dimensional Heisenberg Hamiltonian. They initialize their system by creating two spin domains in their Mott insulator with a single atom per site. By looking at how this spin distribution relaxes they investigated the scaling of the spin transport (essentially asking: what is the probability $P(t)$ for a spin to end up on the wrong side of the domain wall?). This scales with a critical exponent, i.e. $P(t) \propto t^{1/z}$. For the one-dimensional system they found this to be consistent with the so-called Kardar--Parisi--Zhang model, which describes a number of seemingly unrelated physical phenomena. Now, one could argue that you only really understand your system if you can controllably make it go kaputt, so in that spirit they either injected spin impurities in the initial state, or turned on a coupling between chains, which changed the scaling of the transport that ensued.
+
+Related: **Observing emergent hydrodynamics in a long-range quantum magnet**, Joshi *et al.*, [arXiv:2107.00033](https://arxiv.org/abs/2107.00033)
