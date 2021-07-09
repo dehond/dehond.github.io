@@ -21,6 +21,9 @@ layout: default
             {{ post.title | escape }}
           </a>
         </h3>
+				{%- if post.categories contains "arxiv" -%}
+					<img src="/assets/chi-box.svg" height = "40px" align = "left" style = "padding-right:5px; padding-top:5px">
+				{%- endif -%}
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
