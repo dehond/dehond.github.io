@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "arXiv dispatch #0"
-date:   2021-07-02 8:00:00 -0400
+title:  "arXiv dispatch #0 — Before sea or land"
+date:   2021-07-03 8:00:00 -0400
 categories: arxiv
 excerpt: "In which we learn about: optimal control of nuclear spins • many-body quantum chaology • spin transport under microscopes."
 ---
