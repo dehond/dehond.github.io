@@ -1,12 +1,21 @@
 ---
 layout: post
-title:  "arXiv dispatch #1"
-date:   2021-07-10 8:00:00 -0400
+title:  "arXiv dispatch #1 — Somewhere, over the rainbow"
+date:   2021-07-7 8:00:00 -0400
 categories: arxiv
-excerpt: "In which we learn about: "
+excerpt: "In which we learn about: discrete time crystals in NV centers • rainbow scars • image classification using quantum neural networks"
 ---
 
-Each week more papers appear on the arXiv than one could hope to read, still, one can aspire. Here's a subjective and quasi-random sampling from this week's preprints (mostly constrained to quant-gas, atom-ph, and quant-phys).
+Each week a daunting pile of papers appears on the arXiv, more than one could possibly hope to read. Here's a subjective and quasi-random sampling from this week's preprints (mostly constrained to quant-gas, atom-ph, and quant-phys).
 
 **Observation of a many-body-localized discrete time crystal with a programmable spin-based quantum simulator**  
 Randall *et al.*, [arXiv:2107.00736](https://arxiv.org/abs/2107.00736)  
+Lately, there has been a lot of buzz surrounding time crystals: quantum states that spontaneously break translation symmetry in time in such a way that the response is robust under perturbations to the Hamiltonian. This makes these systems a suitable testbed for looking at the thermalization of many-body systems. Here, Randall *et al.* use a group of nuclear spins surrounding an NV center to investigate *discrete* time crystals; they chop up the drive in blocks and check what happens after each block. It has been predicted that in order to stabilize such a time crystal, one requires disorder in the coupling strengths between spins, and one requires the coupling to be sufficiently short ranged. Whie the platform used here naturally meets the former requirement, they meet the latter by using a trick whereby they select a subset of spins such that they effectively have a shorter interaction range.
+
+**Rainbow Scars: From Area to Volume Law**  
+Langlett *et al.*, [arXiv:2107.03416](https://arxiv.org/abs/2107.03416)  
+We stay in many-body-thermalization land a little longer. A while ago, researchers working on chains of Rydberg qubits [serendipitously discovered](https://arxiv.org/abs/2012.12276) a specific initial state that, when prepared, was much longer lived than other states. Later dubbed a 'quantum scar,' it launched a theoretical effort towards understanding these states. What is it about the underlying Hamiltonian that makes them seemingly robust against thermalization? Now, Langlett *et al.* propose a method to prepare such a state in pretty much any system, regardless of the specific Hamiltonian. By using a chain and its mirror image, a state with an entanglement structure resembling a rainbow (hence the name) can be engineered. They construct a system that will naturally show scarring behavior. Finally, they propose a way to implement this using Rydberg arrays, although the specific entanglement required by their proposal will be challenging to implement in the lab.
+
+**A Quantum Convolutional Neural Network for Image Classification**  
+Lü *et al.*, [arXiv:2107.03630](https://arxiv.org/abs/2107.03630)  
+In this paper, two buzzwords join in wedlock: quantum computers and convolutional neural networks. While this is not exactly [the first time this has happened](https://arxiv.org/abs/1810.03787), previous work has largely focused on how neural networks can be used to classify quantum information, whereas the present effort is concerned with how to classify classical information (specifically images). While these days anyone [can be dangerous](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html) with neural networks on classical computers, an interesting feature of a quantum platform is that $N$ qubits can be used to store $2^N$ classical variables. A grayscale image consisting of $M\times M = M^2$ pixels, for instance, can be encoded in $2 \log_2 M$ qubits, 'simply' by setting the amplitude in basis state $|\phi_i\rangle$ equal to the (normalized) value of pixel $i$. (Doing this accurately is a tremendous challenge in practice.) Lü *et al.* apply their proposed network of quantum gates to a set of 64-pixel images, requiring six qubits (which is tractable on your average laptop), and show that they can adequately distinguish between a hand-written '3' and '6.' While classical neural nets still outperform their quantum mechanical counterparts, this will be an interesting challenge for budding quantum platforms. 

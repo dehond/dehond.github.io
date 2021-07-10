@@ -14,7 +14,7 @@ categories:	tutorial
   let icefire = d3.interpolateRgbBasis(icefirecolors);
 </script>
 
-A while ago, I wanted to plot a complex function that was defined on a sphere (i.e. $f(\vartheta, \varphi) = r e^{i\phi}$), and do it in such a way that both the magnitude and phase ($r$ and $\phi$, respectively) of the function would be made visible. Without resorting to complicated three-dimensional plotting methods, the most straightforward way of doing that is to use a colormap to display the phase, while the magnitude is used to set the transparency. (This makes it harder to read off the numerical value of the magnitude, but we'll have to stomach that for now.)
+A while ago, I wanted to plot a complex function that was defined on a sphere [i.e. $f \mapsto r(\vartheta, \varphi) e^{i\phi(\vartheta, \varphi)}$], and do it in such a way that both the magnitude and phase ($r$ and $\phi$, respectively) of the function would be made visible. Without resorting to complicated three-dimensional plotting methods, the most straightforward way of doing that is to use a colormap to display the phase, while the magnitude is used to set the transparency. (This makes it harder to read off the numerical value of the magnitude, but we'll have to stomach that for now.)
 
 <!--more-->
 
