@@ -1,10 +1,18 @@
 $background-color: #cedff2;
-//$base-font-family: adobe-caslon-pro, serif;
 $base-font-size: 16px;
 
-h1, h2, h3, .site-title {
-  font-family: hero-new, sans-serif;
-  font-weight: 100;
+.site-title {
+  font-family: Cabin, sans-serif;
+  font-style: italic;
+}
+
+.post-title {
+  font-size: 10px;
+}
+
+h1, h2, h3 {
+  font-family: Cabin, sans-serif;
+  font-style: regular;
 }
 
 code {
