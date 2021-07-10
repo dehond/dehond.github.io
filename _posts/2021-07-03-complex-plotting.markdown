@@ -3,6 +3,7 @@ layout: 	post
 title: 		Plotting complex functions on a sphere using d3
 date:   	2021-07-03 8:00:00 -0400
 categories:	tutorial
+excerpt: "A while ago, I wanted to plot a complex function that was defined on a sphere, and do it in such a way that both the magnitude and phase of the function would be made visible. Without resorting to complicated three-dimensional plotting methods, the most straightforward way of doing that is to use a colormap to display the phase, while the magnitude is used to set the transparency. (This makes it harder to read off the numerical value of the magnitude, but we'll have to stomach that for now.)"
 ---
 
 <script src='https://d3js.org/d3.v7.min.js'></script>
@@ -15,8 +16,6 @@ categories:	tutorial
 </script>
 
 A while ago, I wanted to plot a complex function that was defined on a sphere [i.e. $f \mapsto r(\vartheta, \varphi) e^{i\phi(\vartheta, \varphi)}$], and do it in such a way that both the magnitude and phase ($r$ and $\phi$, respectively) of the function would be made visible. Without resorting to complicated three-dimensional plotting methods, the most straightforward way of doing that is to use a colormap to display the phase, while the magnitude is used to set the transparency. (This makes it harder to read off the numerical value of the magnitude, but we'll have to stomach that for now.)
-
-<!--more-->
 
 While it's fairly straightforward to achieve this using Matplotlib (see this [StackExchange post](https://stackoverflow.com/questions/32177718/use-a-variable-to-set-alpha-opacity-in-a-colormap) for instance), I wanted to use a way that I could use to create an interactive interface in a website. As we'll explore here, this can be done using the [d3 plotting library](https://d3js.org/) which allows us to draw svg-based figures right into a browser. I also used the extensions [d3-geo-voronoi](https://github.com/Fil/d3-geo-voronoi) for generating polygons that we can fill with a color, and [d3-geo-projection](https://github.com/d3/d3-geo-projection) to access a nonstandard geographical projection. For now we'll focus on the plotting; the interactivity can come later.
 
