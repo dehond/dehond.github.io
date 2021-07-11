@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "arXiv dispatch #1 — Somewhere, over the rainbow"
-date:   2021-07-7 8:00:00 -0400
+date:   2021-07-10 8:00:00 -0400
 categories: arxiv
 excerpt: "In which we learn about: discrete time crystals in NV centers • rainbow scars • image classification using quantum neural networks"
 ---
