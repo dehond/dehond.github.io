@@ -82,7 +82,7 @@ d3.csv("/assets/posts/sf-to-mi/var_n_vs_t.csv")
         .call(yax_draw);
       svg2.append("text")
         .text("t/U")
-        .attr("transform", `translate(${left + (width - left - right)/2}, ${height2 - bottom/2})`)
+        .attr("transform", `translate(${left + (width - left - right)/2}, ${height2 - 10})`)
         .attr("text-anchor", "middle")
         .attr("font-size", 24)
         .attr("font-style", "italic");
