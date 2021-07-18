@@ -6,7 +6,7 @@ categories: arxiv
 excerpt: "In which we learn about: optimal control of nuclear spins • many-body quantum chaology • spin transport under microscopes."
 ---
 
-Each week more papers appear on the arXiv than one could hope to read, still, one can aspire. Here's a subjective and quasi-random sampling from this week's preprints (mostly constrained to quant-gas, atom-ph, and quant-phys).
+Each week more papers appear on the arXiv than one could hope to read, still, one can aspire. Here's a subjective and quasi-random sampling from recent preprints (mostly constrained to quant-gas, atom-ph, and quant-phys).
 
 **Quantum Optimal Control of Nuclear Spin Qudecimals in $^{87}$Sr**  
 Omanakuttan *et al.*, [arXiv:2106.13705](https://arxiv.org/abs/2106.13705)  

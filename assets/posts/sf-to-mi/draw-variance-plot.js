@@ -89,7 +89,7 @@ d3.csv("/assets/posts/sf-to-mi/var_n_vs_t.csv")
 
       d3.selectAll(".axis>.tick>text")
         .each(function(d, i){
-          d3.select(this).style("font-size", 18);
+          d3.select(this).style("font-size", "18px");
         });
       svg2.append("rect")
         .attr("transform", `translate(${left}, ${top_sp})`)

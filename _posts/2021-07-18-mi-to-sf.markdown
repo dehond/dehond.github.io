@@ -1,0 +1,123 @@
+---
+layout: post
+title: "Exploring the superfluid to Mott insulator phase transition"
+category: tutorial
+date: 2021-07-18 15:00:00 -0400
+excerpt: "A lot of research in atomic physics and related areas deals with quantum simulation: using well-understood and well-controlled systems to mimic not so well-understood ones. This quantum mimicry is created first and foremost through an analogy. Here, we take a look at the ur-quantum simulation: the superfluid to Mott insulator phase transition."
+---
+
+<style>
+.controlPanel {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+#sliderContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+#sliderContainer > div {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  vertical-align: middle;
+}
+</style>
+
+<script src="/assets/d3.v7.min.js"></script>
+
+<div id = "headIllustrationContainer">
+  <svg id = "headIllustration"></svg>
+</div>
+
+A lot of research in atomic physics and related areas deals with so called _quantum simulation_: using well-understood and well-controlled systems to mimic not so well-understood ones. This quantum mimicry is created first and foremost through an analogy. If we want system A to behave like system B we have to strive to make the underlying mathematical description analogous, so that they march to the same beat, as it were. We can then either look at how the system behaves as a function of time, or what the properties of its stationary states are. These are special states that do not change while we wait. They have well-defined energies called _eigenenergies_, and there's always one or more of them that have the lowest energy. Physicists are very interested in the properties of these ground states, because they can help us understand complicated systems better. Sometimes they are not so complicated, then they can serve as a point of departure for doing more complicated things.[^0]
+
+Today we'll have a look at what is perhaps the ur-quantum simulation: mimicking a Mott insulator using cold atoms in an optical lattice. This was first done [in the early 2000's](https://www.nature.com/articles/415039a), and is the experiment that has kickstarted this whole business.
+
+#### Condensed matter aside
+Traditionally, a Mott insulator refers to a material that has a half-filled conduction band. Unlike other materials with partially filled bands, though, interactions between electrons cause it to be an insulator. Even though one would naively think there are nearby unoccupied states available to conduct through, this would involve two electrons sitting on the same site in the crystal lattice, which requires an additional energy, hence leading to a splitting of the conduction band. This energy is referred to as the Hubbard $U$.
+
+It turns out that atoms in an optical lattice can exhibit very similar physics. Even though your average cold atom interacts through a contact interaction (which is different from the interaction between electrons in a Mott insulator), it boils down to the same parameter: $U$, or the energy required to squish two particles on a single site. An important difference is that atoms can be either bosonic or fermionic, depending on which type we use. The latter are more like electrons, so the number we can put on one site is capped at two, while we can put as many bosons on a single site as we wish (at the cost of an energy payment $U$ for every pair). We'll focus on the bosonic case here, since the first experiment[^1] was done using such atoms.
+
+#### The Bose--Hubbard model
+Before we can start plonking down atoms on a lattice, there's one more aspect that we need to address: they have a tendency to move around. Quantum mechanics dictates that a particle confined in a potential will, as long as the potential is not too deep, be able to move through the potential walls. In a lattice that potential is periodic, and so we can have a situation on our hands where a particle hops from one end of the lattice to another. This is called tunneling and we can associate an energy $t$ with it. The higher $t$ the faster the tunneling.
+
+Both tunneling between sites and interactions on sites are captured by the Bose--Hubbard Hamiltonian:
+
+$$
+  \mathcal{H} = -t \sum_{i} \left( a_i a_{i+1}^\dagger + \mathrm{H.c.} \right) + \frac{U}{2} \sum_{i} n_i (n_i - 1).
+$$
+
+The first term serves to describe hopping between sites; $a_i$ and $a_{i+1}^\dagger$ are operators that describe taking away a particle from site $i$ and placing it back on site $i+1$, respectively, i.e.: hopping. The second term describes the interaction between atoms sharing the same site; each pair has an interaction energy $U$, and this term just counts the number of pairs. The exact formalism doesn't matter so much, what's important is to realize these terms are in competition with each other. 
+
+#### Our vocabulary
+Before we delve into that, I should introduce the vocabulary that we'll be using. We'll visualize states on the lattice like this:
+<div id = "vocabcontainer">
+  <svg id = "svgvocab"></svg>
+</div>
+This says something about the likelihood of measuring specific particle numbers on sites. The higher the dot, the higher the number of atoms we will find, and if there are multiple dots on a single site that means our measurement can have multiple outcomes. So on the leftmost site we'll always measure a single atom, on the central site we'll always measure two, and on the rightmost site we have a superposition which means there's an equal probability of measuring one or two atoms. This is a little counterintuitive, but it's a useful shortcut to compactly draw the states we'll encounter below.
+
+#### On to the phase transition!
+The superfluid to Mott insulator phase transition shows up when we change the lattice depth. The deeper the lattice, the harder it is for particles to tunnel, and the more confined they become, leading to an increase in interaction energies. This means that, as we ramp up the lattice, $t$ decreases while $U$ increases.[^2]
+
+Throughout, we'll assume that the number of particles is equal to the number of sites, so on average there will be one particle per site.[^3] This may sound like it should lead to straightforward behavior, but it actually is more subtle than that due to the competition between tunneling and interactions.
+
+We can explore different extremes: in a very deep lattice tunneling will be all but negligible, and the interactions dominate. If our particles interact repulsively (which we're assuming here), this means that the system will try to avoid placing two particles on a single site at all costs. Every site will host just a single atom, and this is what we call the Mott insulating phase. Try it out:
+
+<div class = "controlPanel">
+  <h4>Lattice depth</h4>
+  <div id = "sliderContainer">
+    <div>Superfluid</div>
+    <div><input type = "range" id = "vSlider" style="width:100%;vertical-align:middle" min = "0" max = "1" value = "0.575" step = "0.01" oninput = "updateLattice(this.value)"></div>
+    <div>Mott insulator</div>
+  </div>
+</div>
+
+<div id = "container1">
+  <svg id = "svg1"></svg>
+</div>
+
+On the other hand, if the lattice is shallow, tunneling starts to play a role. How should we think about this? Tunneling encourages particles to move around, which means that we can minimize the total energy by delocalizing particles. (After all, it would require energy to force a particle to stick around on a site while it wants to explore its surroundings.) This leads to a curious situation: while in the Mott insulator the number of particles per site is well defined (there's always exactly one atom), this number starts to fluctuate when we lower the lattice. These 'number fluctuations' are reminiscent of a superfluid, which is where this phase gets its name.
+
+In the superfluid phase measuring the number of particles on a site has no certain outcome; for our little system we can measure either zero, one, or two particles with probabilities that vary depending on whether or not the sites are on the edge of the chain. These are true quantum fluctuations, and they have no classical counterpart. We can quantify them further by looking at the standard deviation of the outcomes of our measurements.
+
+Say we measure the number of particles on a specific site a bunch of times, this leads to an array of numbers: $\left( n_1, n_2, \ldots \right)$. Borrowing from statistics, we can express the standard deviation like
+
+$$
+  \langle \sigma_n \rangle = \sqrt{ \langle n^2 \rangle - \langle n \rangle^2 },
+$$
+
+where $n^2$ is the operator that tells us the square of the number of particles on a site, and $\langle n^2 \rangle$ is its expectation value. It may not sound like this is any different from $\langle n \rangle^2$ (the square of the 'regular' expectation value of the number of particles per site), and for the Mott insulator it is not. In that case, if we take four measurements on a particular site, we'll find $\left( 1, 1, 1, 1 \right)$ for which it does not matter whether we average first and then take the square, or do it the other way around, and so $\langle\sigma_n\rangle$ will simply be zero.
+
+In the superfluid phase this is not the case. There we may measure $\left( 1, 2, 0, 1 \right)$, which averages to 1, while the squares $\left(1, 4, 0, 1 \right)$ average to 1.5. Therefore we have $\langle \sigma_n \rangle = \sqrt{ 1.5 - 1^2} > 0$.
+
+We can of course calculate this for the ground states of our short chain, and then we'll indeed find that fluctuations play an important role in the superfluid regime (shallow lattice, high $t/U$), while they tend to zero in the Mott insulator (deep lattice, low $t/U$).
+
+<div id = "container2">
+  <svg id = "svg2"></svg>
+</div>
+
+
+
+#### Wrapping up
+I hope this tutorial has given you an idea of what are some of the most salient features of superfluids and Mott insulators in optical lattices. If you'd like to delve a little further and explore some of the calculations that went on behind the scenes, you can download the Jupyter notebook that I wrote for this purpose [here](/attach/sf-to-mi/bh-model.ipynb). Running it requires the Julia programming language and the [QuantumOptics package](https://qojulia.org/) that is available for it. I can highly recommend both!
+
+#### Notes
+[^0]: At this point one is excused to lament that, apparently, if it's not complicated it's not interesting.
+
+[^1]: It is somewhat of an irony that the first experiments with cold atoms were done with bosons, which are distinctly uninteresting from a condensed matter perspective.
+
+[^2]: Actually, the ground-state properties do not depend on $t$ and $U$ independently. If we express all energies in units of $U$ we realize that everything only depends on the ratio $t/U$. The energy of the ground state in 'real world units' _does_ depend on $U$ and $t$ independently, but we do not care about that here. To prevent introducing unnecessary redundancy in the phase space we explore here, we express everything in terms of $t/U$.
+
+[^3]: In terms of basis states it means that we severely constrain the space in which the system can live. We can work with a variable number of particles by introducing the chemical potential which makes the phase diagram more complicated, but that's something for another time.
+
+<script type="text/javascript" src="/assets/posts/sf-to-mi/draw-interactive-lattice.js"></script>
+<script type="text/javascript" src="/assets/posts/sf-to-mi/draw-variance-plot.js"></script>
+<script type="text/javascript" src="/assets/posts/sf-to-mi/draw-vocabulary.js"></script>
+<script type="text/javascript" src="/assets/posts/sf-to-mi/draw-head-illustration.js"></script>

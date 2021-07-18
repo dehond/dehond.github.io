@@ -6,7 +6,7 @@ categories: arxiv
 excerpt: "In which we learn about: discrete time crystals in NV centers • rainbow scars • image classification using quantum neural networks"
 ---
 
-Each week a daunting pile of papers appears on the arXiv, more than one could possibly hope to read. Here's a subjective and quasi-random sampling from this week's preprints (mostly constrained to quant-gas, atom-ph, and quant-phys).
+Each week a daunting pile of papers appears on the arXiv, more than one could possibly hope to read. Here's a subjective and quasi-random sampling from recent preprints (mostly constrained to quant-gas, atom-ph, and quant-phys).
 
 **Observation of a many-body-localized discrete time crystal with a programmable spin-based quantum simulator**  
 Randall *et al.*, [arXiv:2107.00736](https://arxiv.org/abs/2107.00736)  
