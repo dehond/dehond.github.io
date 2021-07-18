@@ -1,5 +1,5 @@
 let iwidth = parseInt(d3.select('#vocabcontainer').style('width'));
-let iheight = 100;
+let iheight = 120;
 let svgillus = d3.select("#headIllustration")
     .attr("width", iwidth)
     .attr("height", iheight);
@@ -17,9 +17,9 @@ for (let i = 0; i < 2; i++) {
 }
 
 drawLattice(5, 0.3, grp = ilatticePath);
-randomizeAtoms(iatoms, 3);
+randomizeAtoms(iatoms, 5);
 
-let intervalID = window.setInterval( () => randomizeAtoms(iatoms, 3), 1500 );
+let intervalID = window.setInterval( () => randomizeAtoms(iatoms, 5), 1500 );
 
 function randomizeAtoms(atoms, npop) {
     for (let i = 0; i < atoms.length; i++) {

@@ -1,13 +1,15 @@
 let vwidth = parseInt(d3.select('#vocabcontainer').style('width'));
-let vheight = 250;
+let vheight = 190;
 let svgvocab = d3.select("#svgvocab")
     .attr("width", vwidth)
     .attr("height", vheight);
-let vatomsGroup = svgvocab.append("g");
+let vatomsGroup = svgvocab.append("g")
+    .attr("transform", "translate(0, -60)");
 let vlatticePath = svgvocab.append("path")
     .attr('stroke-width', 3)
     .attr('stroke', 'black')
-    .attr('fill', 'none');
+    .attr('fill', 'none')
+    .attr("transform", "translate(0, -60)");
 
 vatoms = [];
 for (let i = 0; i < 2; i++) {
