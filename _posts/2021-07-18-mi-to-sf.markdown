@@ -4,7 +4,7 @@ title: "Exploring the superfluid to Mott insulator phase transition"
 category: tutorial
 date: 2021-07-18 15:00:00 -0400
 excerpt: "A lot of research in atomic physics and related areas deals with quantum simulation: using well-understood and well-controlled systems to mimic not so well-understood ones. This quantum mimicry is created first and foremost through an analogy. Here, we take a look at the ur-quantum simulation: the superfluid to Mott insulator phase transition."
-image: /assets/posts/sf-to-mi/static-image.png
+image: /assets/posts/sf-to-mi/static-image.PNG
 ---
 
 <style>
