@@ -30,27 +30,20 @@ excerpt: ""
 <script>
     let width = parseInt(d3.select('#boxContainer').style('width'));
     let height = 500;
-    let boxMargin = 0;
+    let boxMargin = 10;
     let svg = d3.select("#maxwellbox")
         .attr("width", width)
         .attr("height", height);
 
-    let partitionVelocity = 0.4;
-
     class Ball {
         constructor(pos, vel) {
             this.pos = [pos[0] * (Math.random()), pos[1] * Math.random()];
-            this.vel = [0, 0];
+            this.vel = [Math.random() - 0.5, Math.random() - 0.5];
+            this.speed = Math.sqrt(this.vel[0]**2 + this.vel[1]**2);
             this.dt = 10;
             this.collided = false;
-            this.partition = (Math.random() < 0.5 ? "left" : "right")
-            if (this.partition == "left") {
-                this.vel = [0.5*Math.random() - 0.25, 0.5*Math.random() - 0.25];
-            }
-            else {
-                this.vel = [Math.random() - 0.5, Math.random() - 0.5];
-            }
-            this.speed = Math.sqrt(this.vel[0]**2 + this.vel[1]**2);
+            // 0.4 is the median speed for this distribution
+            this.partition = (this.speed < 0.4 ? "left" : "right")
         }
         makestep() {
             collide(this.pos, this.vel);
@@ -83,7 +76,7 @@ excerpt: ""
                     exit => exit.remove()
                 );
         }
-        checkCollision(pos, vel) {
+        checkPartitionCollision(pos, vel) {
             // Select active links, pick first link coordinate, then calculate the shortest distance to pos.
             let dist = d3.min( this.links.filter( d => d.active ).map( d => d.coords[0]).map( d => Math.sqrt( (pos[0] - d[0])**2 + (pos[1] - d[1])**2 ) ) ) 
             let whichSide = Math.sign(pos[0] - width/2);
@@ -121,9 +114,11 @@ excerpt: ""
     }
 
     let mballs = [];
-    for (let i = 0; i < 50; i++){
+    for (let i = 0; i < 70; i++){
         mballs.push( new Ball([width, height], [Math.random() - 0.5, Math.random() - 0.5]) );
     }
+    let speedscale = myColor = d3.scaleSequential().domain([0, d3.max(mballs.map( d => d.speed ))])
+        .interpolator(d3.interpolateInferno);
 
     let wall = drawWall(svg);
     let partition = new Partition(svg);
@@ -146,7 +141,7 @@ excerpt: ""
                     .attr("cx", d => d.pos[0])
                     .attr("cy", d => d.pos[1])
                     .attr("r", 12)
-                    .attr("fill", d => (d.partition == "left") ? "blue" : "red"),
+                    .attr("fill", d => speedscale( d.speed )),
                 update => update.attr("cx", d => d.pos[0])
                     .attr("cy", d => d.pos[1]),
                 exit => exit.remove()
@@ -167,7 +162,7 @@ excerpt: ""
     }
 
     function collide(pos, vel) {
-        if ( ((pos[0] <= boxMargin) && vel[0] < 0) || ((pos[0] >= (width - boxMargin) && vel[0] > 0)) || partition.checkCollision(pos, vel) ) {
+        if ( ((pos[0] <= boxMargin) && vel[0] < 0) || ((pos[0] >= (width - boxMargin) && vel[0] > 0)) || partition.checkPartitionCollision(pos, vel) ) {
             vel[0] *= -1;
         }
         if ( ((pos[1] <= boxMargin) && vel[1] < 0 ) || ((pos[1] >= height - boxMargin) && (vel[1] > 0) ) ) {
