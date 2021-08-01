@@ -45,11 +45,12 @@ excerpt: ""
             this.collided = false;
             this.partition = (Math.random() < 0.5 ? "left" : "right")
             if (this.partition == "left") {
-                this.vel = [0.3*Math.random() - 0.15, 0.3*Math.random() - 0.15];
+                this.vel = [0.5*Math.random() - 0.25, 0.5*Math.random() - 0.25];
             }
             else {
                 this.vel = [Math.random() - 0.5, Math.random() - 0.5];
             }
+            this.speed = Math.sqrt(this.vel[0]**2 + this.vel[1]**2);
         }
         makestep() {
             collide(this.pos, this.vel);
@@ -119,15 +120,6 @@ excerpt: ""
         }
     }
 
-    function collide(pos, vel) {
-        if ( ((pos[0] <= boxMargin) && vel[0] < 0) || ((pos[0] >= (width - boxMargin) && vel[0] > 0)) || partition.checkCollision(pos, vel) ) {
-            vel[0] *= -1;
-        }
-        if ( ((pos[1] <= boxMargin) && vel[1] < 0 ) || ((pos[1] >= height - boxMargin) && (vel[1] > 0) ) ) {
-            vel[1] *= -1;
-        }
-    }
-
     let mballs = [];
     for (let i = 0; i < 50; i++){
         mballs.push( new Ball([width, height], [Math.random() - 0.5, Math.random() - 0.5]) );
@@ -174,23 +166,13 @@ excerpt: ""
         return wall
     }
 
-    function openDoor(balls) {
-        // Check if any ball that needs to transition is close to the center
-        let answer = false;
-        for (let i = 0; i < balls.length; i++) {
-            if ( Math.abs( balls[i].pos[0] - width/2 ) < 20 && Math.abs( balls[i].pos[1] - height/2 ) < 100 && Math.abs(balls[i].vel[0]) > Math.abs(balls[i].vel[1]) ) {
-                if (balls[i].partition == "left" && balls[i].pos[0] > width/2) {
-                    answer = true;
-                }
-                else if (balls[i].partition == "right" && balls[i].pos[1] < width/2) {
-                    answer = true;
-                }
-            }
+    function collide(pos, vel) {
+        if ( ((pos[0] <= boxMargin) && vel[0] < 0) || ((pos[0] >= (width - boxMargin) && vel[0] > 0)) || partition.checkCollision(pos, vel) ) {
+            vel[0] *= -1;
         }
-        return answer
+        if ( ((pos[1] <= boxMargin) && vel[1] < 0 ) || ((pos[1] >= height - boxMargin) && (vel[1] > 0) ) ) {
+            vel[1] *= -1;
+        }
     }
-
-    let reducer = (accumulator, currentValue) => accumulator + currentValue;
-    console.log(mballs.map(d => (d.partition == "right" ? 1 : -1)).reduce(reducer));
 
 </script>>
