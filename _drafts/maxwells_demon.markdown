@@ -48,7 +48,7 @@ excerpt: ""
                 this.vel = [0.3*Math.random() - 0.15, 0.3*Math.random() - 0.15];
             }
             else {
-                this.vel = [1.5*Math.random() - 0.75, 1.5*Math.random() - 0.75];
+                this.vel = [Math.random() - 0.5, Math.random() - 0.5];
             }
         }
         makestep() {
@@ -58,8 +58,69 @@ excerpt: ""
         }
     }
 
+    class Partition {
+        constructor(parent) {
+            this.points = [...Array(100).keys()].map( d => [width/2, d*height/99] );
+            this.links = this.points.slice(0, this.points.length - 1).map( (d, i) => ({"coords": [d, this.points[i + 1]], "active": true }) );
+            this.parent = parent;
+            this.group = parent.append("g");
+            this.open = false;
+            this.transitioning = false;
+            this.passingBallIndex = 0;
+        }
+        drawPartition(mballs) {
+            this.operateDoor(mballs);
+            this.group.selectAll("path")
+                .data(this.links.filter( d => d.active ))
+                .join(
+                    enter => enter.append("path")
+                        .attr("d", d => d3.line()(d.coords))
+                        .attr("fill", "none")
+                        .attr("stroke", "black")
+                        .attr("stroke-width", 5),
+                    update => update.attr("d", d => d3.line()(d.coords)),
+                    exit => exit.remove()
+                );
+        }
+        checkCollision(pos, vel) {
+            // Select active links, pick first link coordinate, then calculate the shortest distance to pos.
+            let dist = d3.min( this.links.filter( d => d.active ).map( d => d.coords[0]).map( d => Math.sqrt( (pos[0] - d[0])**2 + (pos[1] - d[1])**2 ) ) ) 
+            let whichSide = Math.sign(pos[0] - width/2);
+            if ( (dist < 10) && ( (vel[0] > 0 && whichSide < 0) || (vel[0] < 0 && whichSide > 0) )) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        operateDoor(balls) {
+            if (!this.open) {
+                for (let i = 0; i < balls.length; i++) {
+                    if ( ( Math.abs(balls[i].pos[0] - width/2) < 10) && (( balls[i].vel[0] > 0 && balls[i].pos[0] < width/2 && balls[i].partition == "right") || ( balls[i].vel[0] < 0 && balls[i].pos[0] > width/2 && balls[i].partition == "left" ) ) ) {
+                        this.passingBallIndex = i;
+                        for (let j = 0; j < this.links.length; j++) {
+                            if ( Math.sqrt( (this.links[j].coords[0][0] - balls[i].pos[0])**2 + (this.links[j].coords[0][1] - balls[i].pos[1])**2 ) < 50) {
+                                this.links[j].active = false;
+                            }
+                        }
+                        this.open = true;
+                        break;
+                    }
+                }
+            }
+            else {
+                for (let j = 0; j < this.links.length; j++) {
+                    if ( Math.sqrt( (this.links[j].coords[0][0] - balls[this.passingBallIndex].pos[0])**2 + (this.links[j].coords[0][1] - balls[this.passingBallIndex].pos[1])**2 ) > 50) {
+                        this.links[j].active = true;
+                    }
+                }
+                (this.links.map( d => d.active).filter( d => !d ).length == 0) ? (this.open = false) : null;
+            }
+        }
+    }
+
     function collide(pos, vel) {
-        if ( ((pos[0] <= boxMargin) && vel[0] < 0) || ((pos[0] >= (width - boxMargin) && vel[0] > 0)) || partitionCollide(pos, vel, partitionPoints) ) {
+        if ( ((pos[0] <= boxMargin) && vel[0] < 0) || ((pos[0] >= (width - boxMargin) && vel[0] > 0)) || partition.checkCollision(pos, vel) ) {
             vel[0] *= -1;
         }
         if ( ((pos[1] <= boxMargin) && vel[1] < 0 ) || ((pos[1] >= height - boxMargin) && (vel[1] > 0) ) ) {
@@ -68,22 +129,13 @@ excerpt: ""
     }
 
     let mballs = [];
-    for (let i = 0; i < 100; i++){
+    for (let i = 0; i < 50; i++){
         mballs.push( new Ball([width, height], [Math.random() - 0.5, Math.random() - 0.5]) );
     }
 
     let wall = drawWall(svg);
-
-    let partitionUpper = [...Array(55).keys()].map(d => [width/2, d*0.6875*height/54]);
-    let partitionLower = [...Array(25).keys()].map(d=> [width/2, 0.6875*height + d*0.3125*height/24])
-    let partitionPoints = [partitionUpper, partitionLower];
-    let partition = svg.append("g");
-    let partitionOpen = false;
-    let partitionTransition = false;
-    let timeSpentOpenOrg = 25;
-    let timeSpentOpen = timeSpentOpenOrg;
-
-    drawPartition(partition, partitionPoints);
+    let partition = new Partition(svg);
+    partition.drawPartition(mballs)
 
     let ballgroup = svg.append("g");
     drawBalls(mballs, ballgroup);
@@ -91,10 +143,7 @@ excerpt: ""
     d3.interval( 
         function() {
             drawBalls(mballs, ballgroup);
-            if (openDoor(mballs) && !partitionTransition) {
-                partitionTransition = true;
-            }
-            drawPartition(partition, partitionPoints);
+            partition.drawPartition(mballs);
         }, 16 );
 
     function drawBalls(balls, ballgroup) {
@@ -113,50 +162,6 @@ excerpt: ""
         balls.forEach(d => d.makestep());
     }
 
-    function drawPartition(partition, partitionPoints) {
-        partition.selectAll("path")
-            .data(partitionPoints)
-            .join(
-                enter => enter.append("path")
-                    .attr("d", d3.line())
-                    .attr("fill", "none")
-                    .attr("stroke", "black")
-                    .attr("stroke-width", 5),
-                update => update.attr("d", d3.line()),
-                exit => exit.remove()
-            );
-        if (!partitionOpen && partitionTransition) {
-            timeSpentOpen = timeSpentOpenOrg;
-            if (partitionPoints[0].length > 25) {
-                partitionPoints[0].pop();
-                partitionPoints[0].pop();
-                partitionPoints[0].pop();
-                partitionPoints[0].pop();
-            }
-            else {
-                partitionTransition = true;
-                partitionOpen = true;
-            }
-        }
-        else if (timeSpentOpen > 0) {
-            timeSpentOpen += -1;
-        }
-        else if (partitionOpen && partitionTransition) {
-            let ptslen = partitionPoints[0].length;
-            if (ptslen < 80) {
-                partitionPoints[0].push( [ partitionPoints[0][ptslen - 2][0], partitionPoints[0][ptslen - 2][1] + height/20 ] );
-                partitionPoints[0].push( [ partitionPoints[0][ptslen - 2][0], partitionPoints[0][ptslen - 2][1] + height/20 ] );
-                partitionPoints[0].push( [ partitionPoints[0][ptslen - 2][0], partitionPoints[0][ptslen - 2][1] + height/20 ] );
-                partitionPoints[0].push( [ partitionPoints[0][ptslen - 2][0], partitionPoints[0][ptslen - 2][1] + height/20 ] );
-                partitionPoints[0].push( [ partitionPoints[0][ptslen - 2][0], partitionPoints[0][ptslen - 2][1] + height/20 ] );
-            }
-            else {
-                partitionTransition = false;
-                partitionOpen = false;
-            }
-        }
-    }
-
     function drawWall(svg) {
         let wallWidth = 10;
         let wall = svg.append("g")
@@ -169,23 +174,11 @@ excerpt: ""
         return wall
     }
 
-    function partitionCollide(pos, vel, partitionPoints) {
-        let dist = d3.min( partitionPoints.flat().map( d => Math.sqrt( (pos[0] - d[0])**2 + (pos[1] - d[1])**2 ) ) );
-        let whichSide = Math.sign(pos[0] - partitionPoints[0][0][0]);
-        if ( (dist < 10) && ( (vel[0] > 0 && whichSide < 0) || (vel[0] < 0 && whichSide > 0) )) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
     function openDoor(balls) {
         // Check if any ball that needs to transition is close to the center
         let answer = false;
         for (let i = 0; i < balls.length; i++) {
             if ( Math.abs( balls[i].pos[0] - width/2 ) < 20 && Math.abs( balls[i].pos[1] - height/2 ) < 100 && Math.abs(balls[i].vel[0]) > Math.abs(balls[i].vel[1]) ) {
-            //if ( Math.sqrt( (balls[i].pos[0] - width/2)**2 + (balls[i].pos[1] - height/2)**2 ) < 100 ) {
                 if (balls[i].partition == "left" && balls[i].pos[0] > width/2) {
                     answer = true;
                 }
