@@ -4,7 +4,7 @@ title: "Maxwell's demon and the limits of computation"
 category: tutorial
 date: 2021-08-08 15:00:00 -0400
 excerpt: ""
-image: /assets/posts/maxwells_demon/static-image.PNG
+image: /assets/posts/maxwells-demon/static-image.PNG
 ---
 
 <script src="/assets/d3.v7.min.js"></script>
