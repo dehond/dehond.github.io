@@ -26,6 +26,7 @@ image: /assets/posts/maxwells-demon/static-image.PNG
         position: relative;
         z-index: 3;
         padding-bottom:500px;
+        -webkit-transform: translate3d(0,0,0);
     }
     .floatText {
         background-color: rgba(240, 240, 240, 0.95);
@@ -40,11 +41,10 @@ image: /assets/posts/maxwells-demon/static-image.PNG
         border: none;
         color: white;
         background-color: #5e9cff;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        margin: 4px 2px;
+        padding: 0;
+        height: 70px;
+        width: 90px;
+        font-size: 25px;
         cursor: pointer;
     }
 </style>
@@ -77,9 +77,9 @@ That little creature went into history as Maxwell's demon, and it works somethin
         </p>
     </div>
     <div class = "floatBox">
-        <p class = "floatText">
+        <p class = "floatText" style="text-align:center">
         Click this button to toggle Maxwell's demon: <br>
-        <button class="button" id="demonButton" onclick="toggleDemon()" style="font-size:30px;">▷</button>
+        <button class="button" id="demonButton" onclick="toggleDemon()">▷</button>
         </p>
     </div>
     <div class="floatBox">
@@ -93,11 +93,9 @@ That little creature went into history as Maxwell's demon, and it works somethin
     <div id = "controlPanelContainer" style = "margin-bottom:-50px;">
         <svg id = "temperatureScale"></svg>
     </div>
-    <div>
-        <p style = "text-align:center;">
-            <button class="button" id="demonButton" onclick="toggleDemon()" style="font-size:30px;">▷</button>
-            <button class="button" onclick = "restart()" style="font-size:30px;">↻</button>
-        </p>
+    <div style="text-align:center;vertical-align:middle;margin-bottom:20px;">
+        <button class="button" id="demonButton" onclick="toggleDemon()">▷</button>
+        <button class="button" onclick = "restart()">↻</button>
     </div>
 </div>
 
