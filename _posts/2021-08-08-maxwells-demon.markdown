@@ -26,7 +26,7 @@ image: /assets/posts/maxwells-demon/static-image.PNG
         position: relative;
         z-index: 3;
         padding-bottom:500px;
-        -webkit-transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,1px);
     }
     .floatText {
         background-color: rgba(240, 240, 240, 0.95);
@@ -54,7 +54,7 @@ image: /assets/posts/maxwells-demon/static-image.PNG
     </svg>
 </div>
 
-As any parent of young children can attest, rooms with kids in them tend to get disorganized when left unattended. Toy cars get scattered around, crayon ends up on the wall, and not to mention the looming threat of stepping on an errant Lego brick. No, if one is to maintain a semblance of order that requires constant interventions, which costs a lot of work; be it in the form of verbal instructions ("Clean up your room!") or actually scraping the contents of a jar of peanut butter off the television screen.
+As any parent of young children can attest, rooms with kids in them tend to get disorganized when left unattended. Toy cars get scattered around, crayon ends up on the wall, not to mention the looming threat of stepping on an errant Lego brick. No, maintaining a semblance of order requires constant interventions, which costs a lot of work; be it in the form of verbal instructions ("Clean up your stuff!") or actually scraping the contents of a jar of peanut butter off the television screen.
 
 While in essence this is just a quirk of human behavior, much the same is true in physics, where this effect is captured by the illustrious Second Law of Thermodynamics. While there is a whole history of discussions and theoretical development behind it, this law is often just stated in its pedestrian version: entropy (the physical quantity that formally describes disorder) tends to increase. The very best you can do during a process is keep it constant, but that's only possible if the process is reversible. The consequence is that if you think you've found a way to decrease the entropy of a system in some way, you're probably just increasing it elsewhere without noticing it. This applies to thermodynamic processes[^0], for instance combustion engines and freezers, and during the past decades it has been extended to include information theory as well (which we'll get to in a bit).
 
@@ -115,7 +115,7 @@ So why can't we simply endow the demon with an infinite memory? With Landauer's 
 Real-world computers erase information all the time, in fact any logic gate with more input bits than output bits erases information. Given the output of a two-bit `AND` operation you have no way of figuring out what went in; in the process one bit of information got lost, leading to an increase in entropy of $\ln 2$. If the gate is at a temperature $T$, that means a minimum energy of $k_B T \ln 2$ is required. This is a fundamental limit, but it's only valid in equilibrium. It's also a tiny number, and current computers are operating nowhere near it. They are getting more efficient though, as described by [Koomey's law](https://en.wikipedia.org/wiki/Koomey%27s_law), which says that if the current trend keeps up, computers will hit the wall in the year 2048, which, quite aptly, equals $2^{11}$. 
 
 [^0]: Admittedly, applying it to messy rooms doesn't make a lot of sense, but it's a fun analogy. 
-[^1]: Landauer's principle only applies in equilibrium. There are efforts underway to try and circumvent it by working out of equilibrium.
+[^1]: Landauer's principle only applies if information gets erased in equilibrium. There are efforts underway to try and circumvent it by working either out of equilibrium, or by computing in a reversible fashion such that no information is actually lost.
 
 <script type="text/javascript" src="/assets/posts/maxwells-demon/drawMainBox.js"></script>
 <script type="text/javascript" src="/assets/posts/maxwells-demon/drawHeadAnim.js"></script>
