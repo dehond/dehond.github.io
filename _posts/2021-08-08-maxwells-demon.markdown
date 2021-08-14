@@ -3,7 +3,7 @@ layout: post
 title: "Maxwell's demon and the limits of computation"
 category: tutorial
 date: 2021-08-08 15:00:00 -0400
-excerpt: ""
+excerpt: "What do messy rooms, information processing, and opening your fridge have in common? I'm not sure, but some aspects of the latter two are at least described by thermodynamics. Here we have a look at some of the bounds thermodynamics places on performing computations, and how a thought experiment from the mid-1800's got this ball rolling."
 image: /assets/posts/maxwells-demon/static-image.PNG
 ---
 
