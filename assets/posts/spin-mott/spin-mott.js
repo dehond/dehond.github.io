@@ -35,6 +35,37 @@ function hideInfoBox() {
         .on("end", function() {d3.select(this).style("visibility", "hidden")})
 };
 
+function drawInteractionScales() {
+  let svg = d3.select("#interaction-scales")
+    .attr("width", width)
+    .attr("height", height);
+
+  let nwells = 4;
+  let [lA, lB] = drawLattice(nwells, svg, 0);
+  lB.select("path").attr("stroke", "black");
+  let atoms = drawAtoms(lA, lB, 0.02, 0.3, [red, blue], nwells);
+  lA.selectAll("circle").filter( (_, i) => i < 6 || i > 8 ).remove();
+  lB.selectAll("circle").filter( (_, i) => i < 6 || i > 8 ).remove();
+  lA.select("circle").attr("fill", blue);
+  lB.selectAll("circle").filter( (_, i) => i == 2 ).attr("fill", red);
+
+  addLabel("U", 1/4); 
+  addLabel("Uab", 1/2);
+  addLabel("U", 3/4);
+
+  function addLabel(label, xpos) {
+    svg.append("text")
+      .text(label)
+      .attr("x", xax(xpos))
+      .attr("y", yax(0.6))
+      .attr("text-anchor", "middle")
+      .attr("font-size", 20)
+      .attr("font-style", "italic")
+  }
+}
+
+drawInteractionScales();
+
 // Draw lattice showing phase
 svg_lat = d3.select("#lattice-phase")
   .attr("width", width)
