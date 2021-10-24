@@ -3,6 +3,7 @@ layout: post
 title: The Spin Mott Insulator
 categories: tutorial
 excerpt: "What happens to the Mott insulators when particles are given a spin degree of freedom? Or: a foray into quantum magnetism."
+image: /assets/posts/spin-mott/static-image.png
 ---
 
 <script src="/assets/d3.v7.min.js"></script>
