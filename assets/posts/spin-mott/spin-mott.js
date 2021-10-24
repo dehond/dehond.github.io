@@ -25,14 +25,18 @@ animateLattice();
 
 // Hide the text info box when user hovers over svg
 d3.select("#wannier-container")
-  .on("touchstart", hideInfoBox)
-  .on("mouseover", hideInfoBox);
+  .on("touchstart", showInfoBox)
+  .on("mouseover", showInfoBox);
 
 function hideInfoBox() {
     d3.select("#latticeInfoBox")
-      .transition()
-        .style("opacity", 0)
-        .on("end", function() {d3.select(this).style("visibility", "hidden")})
+      .style("visibility", "hidden");
+};
+
+function showInfoBox(){
+  d3.select("#latticeInfoBox")
+    .transition()
+      .style("opacity", 1);
 };
 
 function drawInteractionScales() {
