@@ -3,7 +3,7 @@ layout: post
 title: Protein Folding through Quantum Annealing
 categories: tutorial
 date: 2022-01-22 13:00:00 -0400
-excerpt: Some classical problems have such a large number of degrees of freedom that solving them is intractable on classical computers. It would simply take astronomical times to sample the full state space and find the solution. Even though these problems are classical in nature, quantum-assisted techniques may provide a way out by, as it were, probing all configurations in parallel, and following the optimal solution. Here we explore some ideas using the problem of protein folding.
+excerpt: Some classical problems have such a large number of degrees of freedom that solving them is intractable on classical computers. It would simply take astronomical times to sample the full state space and find the solution. Even though these problems are classical in nature, quantum-assisted techniques may provide a way out by, as it were, probing all configurations in parallel, and following the optimal solution. Here we explore some of these ideas using the problem of protein folding.
 image: /assets/posts/protein-folding/static-image.png
 ---
 
@@ -167,4 +167,3 @@ The Jupyter notebook I used is [available here](/assets/posts/protein-folding/HP
 
 #### Notes
 <script src="/assets/posts/protein-folding/renderPlot.js"></script>
-
