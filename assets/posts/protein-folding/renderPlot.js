@@ -15,7 +15,7 @@ renderGrid();
 
 function drawEnergyLevelPlot() {
   let height = 400;
-  let width = 430;
+  let width = Math.min(window.innerWidth-50, 430);
   let padding = 50;
 
   let xax = d3.scaleLinear()
