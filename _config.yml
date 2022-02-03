@@ -34,6 +34,7 @@ future: false
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 show_excerpts: true
 excerpt_separator: <!--more-->
