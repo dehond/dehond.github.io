@@ -166,4 +166,4 @@ It is quite remarkable that we can encode a classical optimization problem such 
 The Jupyter notebook I used is [available here](/assets/posts/protein-folding/HP-model.ipynb). It requires Julia and the [QuantumOptics.jl](https://qojulia.org/) package. One thing I haven't really explored here is the effect of the sweep time $\tau$; I set it to be very long so that there's no chance of any diabatic transitions, but it can be relaxed so that there's a fraction of the population that ends up in an excited state.
 
 #### Notes
-<script src="/assets/posts/protein-folding/renderPlot.js"></script>
+<script src="/assets/posts/protein-folding/renderPlot.js" defer></script>
