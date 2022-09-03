@@ -1,0 +1,5 @@
+* Serve
+bundle exec jekyll serve
+  --drafts        (add drafts)
+  --livereload    (immediately reload upon changes in .md files)
+  --host=0.0.0.0  (listen on all incoming connections)

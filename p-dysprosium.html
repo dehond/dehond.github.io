@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-06-18 Sat 12:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dysprosium data</title>
+<meta name="author" content="Julius de Hond" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Dysprosium data</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga002186">1. Electronic structure</a>
+<ul>
+<li><a href="#org56ab12c">1.1. Bosonic Dy</a></li>
+<li><a href="#org235b032">1.2. Fermionic Dy</a></li>
+<li><a href="#orge9b4d61">1.3. Important transitions</a></li>
+</ul>
+</li>
+<li><a href="#org0a324f9">2. Magnetic properties</a>
+<ul>
+<li><a href="#orgdf6af7b">2.1. Magnetic dipolar interaction</a></li>
+</ul>
+</li>
+<li><a href="#org66e81af">3. Dynamical polarizability</a></li>
+<li><a href="#orgb52986b">4. Bibliography</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orga002186" class="outline-2">
+<h2 id="orga002186"><span class="section-number-2">1.</span> Electronic structure</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org56ab12c" class="outline-3">
+<h3 id="org56ab12c"><span class="section-number-3">1.1.</span> Bosonic Dy</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+The bosonic isotopes have no nuclear spin, and hence no hyperfine structure. The electron configuration of their ground states is [Xe]4f<sup>10</sup>6s<sup>2</sup> which spin-orbit couples into a \(^{5}I_8\) configuration.
+</p>
+
+<p>
+This can be seen as follows: the \(s\) shell is filled, and there are 10 electrons in the \(f\) shell, which can accommodate 14 electrons in total. Hence per Hund's first rule: \(S = 2\). The total orbital angular momentum from this shell is made up by the unpaired electrons, which leads to \(L = 1 + 2 + 3 = 6\), which is denoted by \(I\). Finally, since the shell is more than half filled, we have by Hund's third rule that the ground state maximizes \(J\), and hence \(J = 8\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org235b032" class="outline-3">
+<h3 id="org235b032"><span class="section-number-3">1.2.</span> Fermionic Dy</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+The fermionic isotopes have nuclear spins \(I = 5/2\). The hyperfine interaction coefficients vary between isotopes, and so does the ground states. Generally, though, the hyperfine ground state levels satisfy \(11/2 \leq F \leq 21/2\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge9b4d61" class="outline-3">
+<h3 id="orge9b4d61"><span class="section-number-3">1.3.</span> Important transitions</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Because of its complicated electronic structure, dysprosium features a wealth of transitions. The most important ones are arguably those at 421 nm and 626 nm, since they can be used for laser cooling. These are dipole-allowed, stretched transitions of the 6s<sup>2</sup> electrons to 6s6p states (\(J=8 \rightarrow J'=9\)). The 421 nm transition is comparable to the \(D\) lines of alkalis, although its linewidth is substantially broader (\(\Gamma/2\pi = 30~\mathrm{MHz}\)) &#x2013; mostly because the frequency is substantially higher than that of a typical \(D\) line.
+</p>
+
+<p>
+The 626 nm transition changes the symmetry of the two outer electrons (it's a singlet to triplet transition), so it's narrower \(\Gamma/2\pi = 130~\mathrm{kHz}\). In principle this is symmetry forbidden, but because of spin-orbit coupling it's allowed.
+</p>
+
+<p>
+A comprehensive list of lines can be found in the <a href="https://physics.nist.gov/cgi-bin/ASD/lines_hold.pl?el=Dy">NIST database</a>  [<a href="#citeproc_bib_item_1">1</a>] (see <a href="https://physics.nist.gov/cgi-bin/ASD/lines1.pl?spectra=Dy+i&amp;limits_type=0&amp;low_w=&amp;upp_w=&amp;unit=1&amp;de=0&amp;format=0&amp;line_out=0&amp;en_unit=0&amp;output=0&amp;bibrefs=1&amp;page_size=15&amp;show_obs_wl=1&amp;show_calc_wl=1&amp;unc_out=1&amp;order_out=0&amp;max_low_enrg=2&amp;show_av=2&amp;max_upp_enrg=&amp;tsb_value=0&amp;min_str=&amp;A_out=0&amp;S_out=on&amp;intens_out=on&amp;max_str=&amp;allowed_out=1&amp;forbid_out=1&amp;min_accur=&amp;min_intens=&amp;conf_out=on&amp;term_out=on&amp;enrg_out=on&amp;J_out=on&amp;submit=Retrieve+Data">here</a> for all tabulated transitions out of the ground state). Below we've included a (biased) selection of relevant lines for work done in labs around the world. The wavelengths were obtained from Ref. [<a href="#citeproc_bib_item_1">1</a>], and so have the line widths where available (except where indicated). The data on the narrow transitions from the 4f to the 5d shell are all from Ref. [<a href="#citeproc_bib_item_2">2</a>].
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Electron configuration of final state</th>
+<th scope="col" class="org-right">\(J =8 \rightarrow J'\)</th>
+<th scope="col" class="org-left">&lambda; (nm)</th>
+<th scope="col" class="org-left">\(A_{JJ'}\) (\(s^{-1}\))   MAKE SURE TO CHECK THESE AFTER GOING TO A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b>6s<sup>2</sup> transitions</b></td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">4f<sup>10</sup>(<sup>5</sup>I<sub>8</sub>)6s6p(<sup>1</sup>P<sup>o</sup><sub>1</sub>)</td>
+<td class="org-right">7</td>
+<td class="org-left">\(404.597\)</td>
+<td class="org-left">\(30.6 \times 10^3\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">8</td>
+<td class="org-left">\(418.682\)</td>
+<td class="org-left">\(20.1 \times 10^3\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">9</td>
+<td class="org-left">\(421.172\)</td>
+<td class="org-left">\(32.2 \times 10^3\)  [<a href="#citeproc_bib_item_2">2</a>]</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">4f<sup>10</sup>(<sup>5</sup>I<sub>8</sub>)6s6p(<sup>3</sup>P<sup>o</sup><sub>1</sub>)</td>
+<td class="org-right">7</td>
+<td class="org-left">\(598.856\)</td>
+<td class="org-left">\(89\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">8</td>
+<td class="org-left">\(625.909\)</td>
+<td class="org-left">\(142\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">9</td>
+<td class="org-left">\(597.449\)</td>
+<td class="org-left">\(135\)  [<a href="#citeproc_bib_item_3">3</a>]</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">4f<sup>10</sup>(<sup>5</sup>I<sub>8</sub>)6s6p(<sup>3</sup>P<sup>o</sup><sub>2</sub>)</td>
+<td class="org-right">8</td>
+<td class="org-left">\(554.727\)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">9</td>
+<td class="org-left">\(563.950\)</td>
+<td class="org-left">$77.9 $</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">4f<sup>10</sup>(<sup>5</sup>I<sub>7</sub>)6s6p(<sup>3</sup>P<sup>o</sup><sub>2</sub>)</td>
+<td class="org-right">8</td>
+<td class="org-left">$456.509 $</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">9</td>
+<td class="org-left">$457.778 $</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left"><b>4f<sup>10</sup> transitions</b></td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">4f<sup>9</sup>(<sup>6</sup>H<sup>o</sup>)5d6s<sup>2</sup>(<sup>7</sup>K<sup>o</sup><sub>9</sub>)</td>
+<td class="org-right">9</td>
+<td class="org-left">$ 598 $</td>
+<td class="org-left">\(12\)</td>
+</tr>
+
+<tr>
+<td class="org-left">4f<sup>9</sup>(<sup>6</sup>H<sup>o</sup>)5d6s<sup>2</sup>(<sup>5</sup>K<sup>o</sup><sub>9</sub>)</td>
+<td class="org-right">9</td>
+<td class="org-left">$ 741 $</td>
+<td class="org-left">\(1.78\)</td>
+</tr>
+
+<tr>
+<td class="org-left">4f<sup>9</sup>(<sup>6</sup>H<sup>o</sup>)5d6s<sup>2</sup>(<sup>7</sup>I<sup>o</sup><sub>9</sub>)</td>
+<td class="org-right">9</td>
+<td class="org-left">$1001 $</td>
+<td class="org-left">\(53\times 10^{-3}\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org9805752" class="outline-4">
+<h4 id="org9805752"><span class="section-number-4">1.3.1.</span> Oscillator strengths and reduced matrix elements</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Following [<a href="#citeproc_bib_item_4">4</a>], the decay rate \(\Gamma\), oscillator strength \(f\), and the reduced matrix element are related through:
+</p>
+\begin{equation}
+    \Gamma = \frac{e^{2} \omega_{0}^{2}}{2\pi \epsilon_{0} m_{e} c^{3}} \frac{2J + 1}{2J' + 1} f
+\end{equation}
+\begin{equation}
+    f = \frac{2}{3} \frac{\omega_{0} m_{e}}{\hbar} |\langle J || \mathbf{r} || J' \rangle|^{2}
+\end{equation}
+
+<p>
+Note that some literature sources choose to incorporate the \((2J + 1)\) factors into either the reduced matrix element or the oscillator strength.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org0a324f9" class="outline-2">
+<h2 id="org0a324f9"><span class="section-number-2">2.</span> Magnetic properties</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The coupling of a magnetic atom to an external magnetic field \(\mathbf{B}\) is given by the Zeeman term \(H_Z = \mu_B g_J \mathbf{J} \cdot \mathbf{B}\), where \(\mu_B\) is the Bohr magneton and \(g_J\) is the Landé \(g\) factor:
+</p>
+\begin{equation}
+    g_J = g_L \frac{J(J+1) - S(S+1) + L(L+1)}{2J(J+1)} + g_S \frac{J(J+1) - S(S+1) + L(L+1)}{2J(J+1)},
+\end{equation}
+<p>
+where \(g_L = 1\) and \(g_S \approx 2\) are the orbital and spin \(g\) factors, respectively.
+</p>
+
+<p>
+Based on this, one would expect the bosonic ground state of dysprosium to have \(g_J = 1.25\), but in reality it deviates because of its multielectron structure. Its been measured to be \(g_J = 1.24159\) [<a href="#citeproc_bib_item_5">5</a>,<a href="#citeproc_bib_item_6">6</a>]. This means that the stretched ground state has a magnetic moment of \(9.93\mu_B\), which results in a Zeeman shift of \(\mu_{B}g_J = 1.7~\mathrm{MHz/G}\), per \(m_J\).
+</p>
+</div>
+
+<div id="outline-container-orgdf6af7b" class="outline-3">
+<h3 id="orgdf6af7b"><span class="section-number-3">2.1.</span> Magnetic dipolar interaction</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+The dipole&#x2013;dipole interaction between two dipoles that are aligned with an external field (i.e. \(J_z\) is maximized) is given by
+</p>
+\begin{equation}
+    V_{dd} = \frac{\mu_{0}\mu^{2}}{4\pi} \frac{1-3\cos^{2}\theta}{r^{3}}.
+\end{equation}
+<p>
+Using \(\mu=10\mu_{B}\) we find that, if two dysprosium atoms are 50 nm apart, and are aligned head-to-tail (i.e. they are maximally attractive), the interaction is 20 kHz. This falls off with the cube of the interparticle separation, so in an optical lattice with a period of 532 nm (where the separation is ten times larger), the interaction will be 20 Hz. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org66e81af" class="outline-2">
+<h2 id="org66e81af"><span class="section-number-2">3.</span> Dynamical polarizability</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Calculating the dynamical polarizability of a multielectron atom is generally a Complicated Problem, and there are still some disagreements between theory and experiment. Nevertheless, using second-order perturbation theory in the dipole term gives results that are useful for obtaining ballpark figures of AC Stark shifts, and Raman coupling strengths.
+</p>
+
+<p>
+Here we follow the formalism as described by Refs. [<a href="#citeproc_bib_item_7">7</a>,<a href="#citeproc_bib_item_8">8</a>]. Specifically, beware that the Einstein \(A\) coefficient given for the 418 nm line in Ref. [<a href="#citeproc_bib_item_9">9</a>] differs by about a factor of 2 from the one given by the authors of Ref. [<a href="#citeproc_bib_item_8">8</a>], and that using their value gives polarizabilities that are seemingly too large.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb52986b" class="outline-2">
+<h2 id="orgb52986b"><span class="section-number-2">4.</span> Bibliography</h2>
+<div class="outline-text-2" id="text-4">
+<style>.csl-left-margin{float: left; padding-right: 0em;}
+ .csl-right-inline{margin: 0 0 0 1em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>
+    <div class="csl-left-margin">[1]</div><div class="csl-right-inline">A. Kramida, Yu. Ralchenko, J. Reader, and the NIST ASD Team, <i>NIST Atomic Spectra Database</i> <a href="https://physics.nist.gov/asd">https://physics.nist.gov/asd</a>.</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>
+    <div class="csl-left-margin">[2]</div><div class="csl-right-inline">M. Lu, S. H. Youn, and B. L. Lev, <i>Spectroscopy of a Narrow-Line Laser-Cooling Transition in Atomic Dysprosium</i>, Phys. Rev. A <b>83</b>, 012510 (2011) <a href="https://link.aps.org/doi/10.1103/PhysRevA.83.012510">https://link.aps.org/doi/10.1103/PhysRevA.83.012510</a>.</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>
+    <div class="csl-left-margin">[3]</div><div class="csl-right-inline">M. Gustavsson, H. Lundberg, L. Nilsson, and S. Svanberg, <i>Lifetime Measurements for Excited States of Rare-Earth Atoms Using Pulse Modulation of a Cw Dye-Laser Beam</i>, Josa <b>69</b>, 984 (1979).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>
+    <div class="csl-left-margin">[4]</div><div class="csl-right-inline">D. Steck, <i>Rubidium 87 D Line Data</i> <a href="http://steck.us/alkalidata">http://steck.us/alkalidata</a>.</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_5"></a>
+    <div class="csl-left-margin">[5]</div><div class="csl-right-inline">W. Martin, R. Zalubas, and L. Hagan, <i>Atomic Energy Levels – the Rare-Earth Elements</i> (National Bureau of Standards, 1978) <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/NSRDS/nbsnsrds60.pdf">https://nvlpubs.nist.gov/nistpubs/Legacy/NSRDS/nbsnsrds60.pdf</a>.</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_6"></a>
+    <div class="csl-left-margin">[6]</div><div class="csl-right-inline">J. Ferch, W. Dankwort, and H. Gebauer, <i>Hyperfine Structure Investigations in DyI with the Atomic Beam Magnetic Resonance Method</i>, Physics Letters A <b>49</b>, 287 (1974).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_7"></a>
+    <div class="csl-left-margin">[7]</div><div class="csl-right-inline">F. Le Kien, P. Schneeweiss, and A. Rauschenbeutel, <i>Dynamical Polarizability of Atoms in Arbitrary Light Fields: General Theory and Application to Cesium</i>, The European Physical Journal D <b>67</b>, 1 (2013).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_8"></a>
+    <div class="csl-left-margin">[8]</div><div class="csl-right-inline">H. Li, J.-F. Wyart, O. Dulieu, S. Nascimbene, and M. Lepers, <i>Optical Trapping of Ultracold Dysprosium Atoms: Transition Probabilities, Dynamic Dipole Polarizabilities and van Der Waals C6 Coefficients</i>, Journal of Physics B: Atomic, Molecular and Optical Physics <b>50</b>, 014005 (2016).</div>
+  </div>
+  <div class="csl-entry"><a id="citeproc_bib_item_9"></a>
+    <div class="csl-left-margin">[9]</div><div class="csl-right-inline">M. Wickliffe, J. E. Lawler, and G. Nave, <i>Atomic Transition Probabilities for Dy I and Dy Ii</i>, Journal of Quantitative Spectroscopy and Radiative Transfer <b>66</b>, 363 (2000).</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Julius de Hond</p>
+<p class="date">Created: 2022-06-18 Sat 12:11</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
