@@ -8,22 +8,22 @@ permalink: /dysprosium
 <script type="text/javascript" src="/assets/mpld3.v0.5.8.min.js"></script>
 
 #### About this page
-This is an attempt at an overview of some of the relevant data for people looking to understand (ultracold) dysprosium. Since dysprosium is an element that -- compared to alkali's -- has only recently been laser cooled this is very much a work in progress. Everything presented here is a synthesis of the work of a number of groups in the field and is primarily an overview of some of the important results in the literature. If you'd like to add something feel free to submit a [pull request](https://github.com/dehond/dehond.github.io/blob/dev/p-dysprosium.md) or to send me an email. 
+This is an attempt at an overview of some of the relevant data for people looking to understand (ultracold) dysprosium. Since dysprosium is an element that -- compared to alkali's -- has only recently been laser cooled this is very much a work in progress. Everything presented here is a synthesis of the work of a number of groups in the field and is primarily an overview of some of the important results in the literature. If you'd like to add something feel free to submit a [pull request](https://github.com/dehond/dehond.github.io/blob/main/p-dysprosium.md) or to send me an email. 
 
 
 # Table of Contents
 
-1.  [Magnetic properties](#org3bb5ff1)
-    1.  [Magnetic dipolar interaction](#org62ea8d4)
-2.  [Electronic structure](#orgcc7a48a)
-    1.  [Bosonic Dy](#orgfff56f3)
-    2.  [Fermionic Dy](#org52ed869)
-    3.  [Important transitions](#org2636275)
-3.  [Dynamical polarizability](#org088ae99)
-4.  [Bibliography](#org019a7ee)
+1.  [Magnetic properties](#org09449b2)
+    1.  [Magnetic dipolar interaction](#orge6879bc)
+2.  [Electronic structure](#org5ecc1c7)
+    1.  [Bosonic Dy](#orgf9e4930)
+    2.  [Fermionic Dy](#org748d944)
+    3.  [Important transitions](#orge9ac30e)
+3.  [Dynamical polarizability](#orgc0abc5b)
+4.  [Bibliography](#orgf7292be)
 
 
-<a id="org3bb5ff1"></a>
+<a id="org09449b2"></a>
 
 # Magnetic properties
 
@@ -38,7 +38,7 @@ where $g_L = 1$ and $g_S \approx 2$ are the orbital and spin $g$ factors, respec
 Based on this, one would expect the bosonic ground state of dysprosium to have $g_J = 1.25$, but in reality it deviates because of its multielectron structure. Its been measured to be $g_J = 1.24159$ [<a href="#citeproc_bib_item_1">1</a>,<a href="#citeproc_bib_item_2">2</a>]. This means that the stretched ground state has a magnetic moment of $9.93\mu_B$, which results in a Zeeman shift of $\mu_{B}g_J = 1.7~\mathrm{MHz/G}$, per $m_J$.
 
 
-<a id="org62ea8d4"></a>
+<a id="orge6879bc"></a>
 
 ## Magnetic dipolar interaction
 
@@ -51,12 +51,12 @@ The dipole&#x2013;dipole interaction between two dipoles that are aligned with a
 Using $\mu=10\mu_{B}$ we find that, if two dysprosium atoms are 50 nm apart, and are aligned head-to-tail (i.e. they are maximally attractive), the interaction is 20 kHz. This falls off with the cube of the interparticle separation, so in an optical lattice with a period of 532 nm (where the separation is ten times larger), the interaction will be 20 Hz. 
 
 
-<a id="orgcc7a48a"></a>
+<a id="org5ecc1c7"></a>
 
 # Electronic structure
 
 
-<a id="orgfff56f3"></a>
+<a id="orgf9e4930"></a>
 
 ## Bosonic Dy
 
@@ -65,14 +65,14 @@ The bosonic isotopes have no nuclear spin, and hence no hyperfine structure. The
 This can be seen as follows: the $s$ shell is filled, and there are 10 electrons in the $f$ shell, which can accommodate 14 electrons in total. Hence per Hund's first rule: $S = 2$. The total orbital angular momentum from this shell is made up by the unpaired electrons, which leads to $L = 1 + 2 + 3 = 6$, which is denoted by $I$. Finally, since the shell is more than half filled, we have by Hund's third rule that the ground state maximizes $J$, and hence $J = 8$.
 
 
-<a id="org52ed869"></a>
+<a id="org748d944"></a>
 
 ## Fermionic Dy
 
 The fermionic isotopes have nuclear spins $I = 5/2$. The hyperfine interaction coefficients vary between isotopes, and so does the ground states. Generally, though, the hyperfine ground state levels satisfy $11/2 \leq F \leq 21/2$.
 
 
-<a id="org2636275"></a>
+<a id="orge9ac30e"></a>
 
 ## Important transitions
 
@@ -256,7 +256,7 @@ Another convenient example is the $6s6p$ triplet ($^{3}P^{o}_{J}$), which can ma
 For the transitions involving the $4f$ electrons things are a little more opaque. The ones shown in the table above have the remaining 9 electrons in that shell in a $^{6}H^{o}$ configuration, with $L = 5$ and $S = 5/2$. This can couple in a host of different ways to the $5d6s^{2}$ electrons with $L = 2$ and $S = 1/2$, giving rise to a forest of lines, some of which are included above. 
 
 
-<a id="org088ae99"></a>
+<a id="orgc0abc5b"></a>
 
 # Dynamical polarizability
 
@@ -307,7 +307,7 @@ function adjustPlots() {
 *Last update was on: {{ site.time }}*
 
 
-<a id="org019a7ee"></a>
+<a id="orgf7292be"></a>
 
 # Bibliography
 
