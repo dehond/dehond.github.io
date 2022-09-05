@@ -13,17 +13,17 @@ This is an attempt at an overview of some of the relevant data for people lookin
 
 # Table of Contents
 
-1.  [Magnetic properties](#org09449b2)
-    1.  [Magnetic dipolar interaction](#orge6879bc)
-2.  [Electronic structure](#org5ecc1c7)
-    1.  [Bosonic Dy](#orgf9e4930)
-    2.  [Fermionic Dy](#org748d944)
-    3.  [Important transitions](#orge9ac30e)
-3.  [Dynamical polarizability](#orgc0abc5b)
-4.  [Bibliography](#orgf7292be)
+1.  [Magnetic properties](#orgae8a113)
+    1.  [Magnetic dipolar interaction](#orgfd8d814)
+2.  [Electronic structure](#org084c1ac)
+    1.  [Bosonic Dy](#org20e18be)
+    2.  [Fermionic Dy](#orga098cd2)
+    3.  [Important transitions](#orgdb84ed5)
+3.  [Dynamical polarizability](#orgf4a271e)
+4.  [Bibliography](#org8488f16)
 
 
-<a id="org09449b2"></a>
+<a id="orgae8a113"></a>
 
 # Magnetic properties
 
@@ -38,7 +38,7 @@ where $g_L = 1$ and $g_S \approx 2$ are the orbital and spin $g$ factors, respec
 Based on this, one would expect the bosonic ground state of dysprosium to have $g_J = 1.25$, but in reality it deviates because of its multielectron structure. Its been measured to be $g_J = 1.24159$ [<a href="#citeproc_bib_item_1">1</a>,<a href="#citeproc_bib_item_2">2</a>]. This means that the stretched ground state has a magnetic moment of $9.93\mu_B$, which results in a Zeeman shift of $\mu_{B}g_J = 1.7~\mathrm{MHz/G}$, per $m_J$.
 
 
-<a id="orge6879bc"></a>
+<a id="orgfd8d814"></a>
 
 ## Magnetic dipolar interaction
 
@@ -51,28 +51,28 @@ The dipole&#x2013;dipole interaction between two dipoles that are aligned with a
 Using $\mu=10\mu_{B}$ we find that, if two dysprosium atoms are 50 nm apart, and are aligned head-to-tail (i.e. they are maximally attractive), the interaction is 20 kHz. This falls off with the cube of the interparticle separation, so in an optical lattice with a period of 532 nm (where the separation is ten times larger), the interaction will be 20 Hz. 
 
 
-<a id="org5ecc1c7"></a>
+<a id="org084c1ac"></a>
 
 # Electronic structure
 
 
-<a id="orgf9e4930"></a>
+<a id="org20e18be"></a>
 
 ## Bosonic Dy
 
-The bosonic isotopes have no nuclear spin, and hence no hyperfine structure. The electron configuration of their ground states is [Xe]4f<sup>10</sup>6s<sup>2</sup> which spin-orbit couples into a $^{5}I_8$ configuration.
+The bosonic isotopes ($^{162}\rm{Dy}$ and $^{164}\rm{Dy}$) have no nuclear spin, and hence no hyperfine structure. The electron configuration of their ground states is [Xe]4f<sup>10</sup>6s<sup>2</sup> which spin-orbit couples into a $^{5}I_8$ configuration.
 
 This can be seen as follows: the $s$ shell is filled, and there are 10 electrons in the $f$ shell, which can accommodate 14 electrons in total. Hence per Hund's first rule: $S = 2$. The total orbital angular momentum from this shell is made up by the unpaired electrons, which leads to $L = 1 + 2 + 3 = 6$, which is denoted by $I$. Finally, since the shell is more than half filled, we have by Hund's third rule that the ground state maximizes $J$, and hence $J = 8$.
 
 
-<a id="org748d944"></a>
+<a id="orga098cd2"></a>
 
 ## Fermionic Dy
 
-The fermionic isotopes have nuclear spins $I = 5/2$. The hyperfine interaction coefficients vary between isotopes, and so does the ground states. Generally, though, the hyperfine ground state levels satisfy $11/2 \leq F \leq 21/2$.
+The fermionic isotopes ($^{161}\rm{Dy}$ and $^{163}\rm{Dy}$) have nuclear spins $I = 5/2$. The hyperfine interaction coefficients vary between isotopes, and so does the ground states. Generally, though, the hyperfine ground state levels satisfy $11/2 \leq F \leq 21/2$.
 
 
-<a id="orge9ac30e"></a>
+<a id="orgdb84ed5"></a>
 
 ## Important transitions
 
@@ -256,7 +256,7 @@ Another convenient example is the $6s6p$ triplet ($^{3}P^{o}_{J}$), which can ma
 For the transitions involving the $4f$ electrons things are a little more opaque. The ones shown in the table above have the remaining 9 electrons in that shell in a $^{6}H^{o}$ configuration, with $L = 5$ and $S = 5/2$. This can couple in a host of different ways to the $5d6s^{2}$ electrons with $L = 2$ and $S = 1/2$, giving rise to a forest of lines, some of which are included above. 
 
 
-<a id="orgc0abc5b"></a>
+<a id="orgf4a271e"></a>
 
 # Dynamical polarizability
 
@@ -307,7 +307,7 @@ function adjustPlots() {
 *Last update was on: {{ site.time }}*
 
 
-<a id="orgf7292be"></a>
+<a id="org8488f16"></a>
 
 # Bibliography
 
