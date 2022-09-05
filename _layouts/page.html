@@ -11,7 +11,7 @@ layout: default
   </header>
 
   <div class="post-content">
-    {{ content }}
+    {% include anchor_headings.html html=content anchorBody="#" h_max=3 anchorClass="myAnchor" %}
   </div>
 
 </article>

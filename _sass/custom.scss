@@ -29,3 +29,12 @@ code {
 .page-content p {
     text-align: justify;
 }
+
+h1:hover a, h2:hover a, h3:hover a {
+    visibility: visible;
+    color: lightgray;
+}
+
+.myAnchor {
+    visibility: hidden;
+}
