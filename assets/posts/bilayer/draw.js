@@ -1,10 +1,11 @@
 let height = 300;
+let width = document.getElementById("bilayer").clientWidth;
+width = 740;
 
 let svg = d3.select("#bilayer")
   .attr("width", "100%")
-  .attr("height", height);
-
-let width = document.getElementById("bilayer").clientWidth;
+  .attr("viewBox", "0 0 740 300")
+  .attr("preserveAspectRatio", "xMidYMid meet");
 
 let xax = d3.scaleLinear()
   .range([0, width])
