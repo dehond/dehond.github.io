@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: tutorial
 date: 2023-01-11 07:00:00 +0100
 title: "Earnshaw's Theorem, or: Why Frogs Can Float, but Magnets Won't"
 excerpt: When thinking about trapping of magnetic particles such as atoms, we often say that particles that seek out strong magnetic fields (bar magnets, compass needles) cannot be trapped with stationary fields. Referred to as Earnshaw's theorem, it's usually encountered as its restatement that 'Magnetic field maxima are forbidden!' Samuel Earnshaw, however, wasn't in the business of messing around with magnets in his shed, no, he had greater ambitions.

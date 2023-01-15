@@ -57,3 +57,8 @@ exclude: [minima-2.5.1]
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+header_pages:
+  - index.markdown
+  - dysprosium.md
+  - posts.markdown
