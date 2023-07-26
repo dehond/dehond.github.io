@@ -39,7 +39,7 @@ a citation reference. If it does, open it externally."
     (if el-type (org-papers-open-file element) nil)))
 
 (defun org-papers-open-file (element)
-  "Given an org element containing a citaiton reference,
+  "Given an org element containing a citation reference,
 find the corresponding pdf in the folder set by the variable
 org-papers-directory, and open it."
   (let* ((ref-key (org-element-property :key element))
