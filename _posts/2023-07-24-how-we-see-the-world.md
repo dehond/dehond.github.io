@@ -1,11 +1,10 @@
 ---
 layout: post
 title:  "How we see the world"
-date:   2023-07-24 8:00:00 +0200
+date:   2023-07-26 21:00:00 +0200
 categories: tutorial
 excerpt: "In which we try to figure out what bottlenose dolphins, black holes, and imaging systems have in common, whether it is possible to see without light, and what it means to 'see' something in the first place."
 image: /attach/imaging/eliasson-compressed.png
-hidden: true
 ---
 <div id="headerImage">
     <img src="/attach/imaging/eliasson-compressed.png">
