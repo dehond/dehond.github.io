@@ -3,6 +3,7 @@ layout: post
 category: maths
 tags: statistics clojure
 title: Sinterrandomness
+excerpt: "Message to those who participated in Secret Santa-type games this year: you may have been unwittingly approximating $e$ in one of the most inane ways possible."
 ---
 
 Like many other countries, The Netherlands has an end-of-year tradition that involves getting together in a group and exchanging gifts. Similar to Secret Santa, the gifter--giftee roles are typically assigned at random, which, in the days of yore involved putting names in a hat and taking random draws until no one drew their own name. (Which, and I bet you didn't expect this here -- at least I didn't -- takes about $e$ times for sufficiently large groups. More about this later.)
