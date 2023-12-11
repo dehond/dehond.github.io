@@ -3,7 +3,7 @@ layout: post
 category: maths
 tags: statistics
 title: Sinterrandomness
-excerpt: "Notice for those who participated in a Secret Santa-type game this year: you have unwittingly been approximating $e$ in one of the most inane ways possible."
+excerpt: "PSA for those who participated in a Secret Santa-type game this year: you have unwittingly been approximating $e$ in what must be one of the most inane ways possible."
 date: 2023-12-11 20:30:00 +0100
 image: /attach/sinterrandomness/graphs-header.png
 ---
