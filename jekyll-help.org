@@ -3,3 +3,6 @@ bundle exec jekyll serve
   --drafts        (add drafts)
   --livereload    (immediately reload upon changes in .md files)
   --host=0.0.0.0  (listen on all incoming connections)
+
+* Invisible posts
+To hide a published post, set ~hidden: true~ in the header data.
