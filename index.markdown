@@ -40,7 +40,7 @@ permalink: /
 <div id = "about-container">
     <span id = "about">
     <h3>Hi, I'm Julius</h3>
-    <p>I'm an atomic physicist currently working at Pasqal in Paris, France.</p>
+    <p>I'm an atomic physicist currently working at Pasqal in Amsterdam, The Netherlands.</p>
     <p>We are working to build a quantum computer based on neutral atoms and Rydberg interactions. I work in a team that forms the link between the hardware on the one hand, and the algorithms on the other.</p>
     <!-- <p>I work in labs where we try to simulate uncontrollable and complicated quantum mechanical systems using controllable and (slightly) less complicated ones.</p> -->
 
