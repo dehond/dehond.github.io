@@ -4,6 +4,7 @@ title: "The Phase Vocoder, or: how to get more of the same"
 categories: tutorial
 date: 2024-02-24
 hidden: true
+excerpt: YouTube and podcast apps appear to be able to change the playback speed of an audio signal without dramatically changing the pitch. How does this work? And could it be useful for musicians looking to change the playback speed of a sample during a performance? A look at the phase vocoder.
 ---
 
 > [Punctuality and rhythm are] the same thing. It's knowing how long things take.
