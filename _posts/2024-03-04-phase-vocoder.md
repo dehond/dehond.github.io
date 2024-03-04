@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "The Phase Vocoder, or: how to get more of the same"
-categories: tutorial
-date: 2024-02-24
-hidden: true
-excerpt: YouTube and podcast apps appear to be able to change the playback speed of an audio signal without dramatically changing the pitch. How does this work? And could it be useful for musicians looking to change the playback speed of a sample during a performance? A look at the phase vocoder.
+title: "The Phase Vocoder, or: how to stretch without a catch"
+categories: maths
+date: 2024-03-04 21:30:00 +0100
+hidden: false
+excerpt: YouTube and podcast apps appear to be able to change the playback speed of an audio signal without (dramatically) changing the pitch. How does this work? And could it be useful for musicians looking to change the playback speed of a sample during a performance? A look at the phase vocoder.
 ---
 
 > [Punctuality and rhythm are] the same thing. It's knowing how long things take.
@@ -12,7 +12,7 @@ excerpt: YouTube and podcast apps appear to be able to change the playback speed
 
 Over New Year's, a friend was telling me about what sounded like a magical device. A guitar pedal[^1] that is able stretch or compress a recorded audio sample without changing its pitch. This sounds intriguing, if not impossible: we all know the chipmunk voice effect that occurs when a recording is played back too quickly, or, if the recording is played back too slowly, how the pitch is lowered, which is often [used to comedic effect](https://www.youtube.com/watch?v=JwegP3H0RcI) in slow-motion scenes. Yet, YouTube and some podcast clients also offer an option of changing the playback speed while somehow preserving the pitch of the sound track -- so what's going on here?
 
-For musicians that use pedals for looping (i.e. recording a sound sample that is played on repeat as they play over it) this is no joke: people are not able to keep perfect rhythm. They may be able to play at 100 bpm on average, but cannot avoid the occasional excursion to 104 or 96 bpm. Another way of putting this would be to say that our local oscillator doesn't have a very narrow linewidth. Audio equipment has, by comparison, a highly coherent clock. As a result, a loop pedal can maintain its rhythm in what feels like perpetuity. So how do we get these two clocks to sync? If we were to naively change the playback speed of the loop pedal to match the band's beat, there would be invariable pitch shifts. A simpler solution is for the band to phase lock themselves to the background loop by means of a metronome.
+For musicians that use pedals for looping (i.e. recording a sound sample that is played on repeat as they continue to play over it) this is no joke: people are not able to keep perfect rhythm. They may be able to play at 100 bpm on average, but cannot avoid the occasional excursion to 104 or 96 bpm. Another way of putting this would be to say that our local oscillator doesn't have a very narrow linewidth. Audio equipment has, by comparison, a highly coherent clock. As a result, a loop pedal can maintain its rhythm in what feels like perpetuity. So how do we get these two clocks to sync? If we were to naively change the playback speed of the loop pedal to match the band's beat, there would be invariable pitch shifts. A simpler solution is for the band to phase lock themselves to the background loop by means of a metronome.
 
 What if, instead, we could use some signal manipulation tricks to speed up or slow down a track without changing its pitch? It turns out we can, by means of an algorithm known as the _phase vocoder_.
 
@@ -24,7 +24,7 @@ The following waveform illustrates the difference between the frequency of the n
 <div>
 <img align="center" width="100%" src="/assets/posts/vocoder/waves_3.svg">
 </div>
-If we want to investigate how the frequency components evolve over time, we can chop up the signal into frames that are smaller than the beat period, but larger than the period of the lowest note. If we then take the Fourier transform of these bins we should see which tones are present at which moment. Specifically, we choose a window function that consists of $M$ points, and move this forward over the signal by stepping it forwards $a_a$ points every time. If there are $L$ points in the signal, this results in $N \approx \lfloor (L-M)/a_a \rfloor$ frames, each containing the Fourier coefficients of $M$ frequency components.
+If we want to investigate how the frequency components evolve over time, we can chop up the signal into frames that are smaller than the beat period, but larger than the period of the lowest note. If we then take the Fourier transform of these bins we should see which tones are present at which moment. Specifically, we choose a window function that consists of $M$ points, and move this forward over the signal by stepping it forwards $a$ points every time. If there are $L$ points in the signal, this results in $N \approx \lfloor (L-M)/a \rfloor$ frames, each containing the Fourier coefficients of $M$ frequency components.
 
 If we do this for the signal drawn above, we get the following rather... unremarkable spectrogram:
 <div>
@@ -37,7 +37,7 @@ To illustrate this, let's simplify things further by applying it to a monotonic 
 <div>
 <img align="center" width="100%" src="/assets/posts/vocoder/waves_1.svg">
 </div>
-The shaded, grey areas here denote the windowing functions, which we took to be a Hann window (i.e. a single period of a sinusoid). If we now split out all these frames, we get the following wavelets (here stacked vertically so we can tell them apart):
+The shaded, grey areas here denote the windowing functions, which we took to be a Hann window (i.e. a single period of a sinusoid). If we now split out all these frames, we get the following wavelets (stacked vertically so we can tell them apart):
 <div>
 <img align="center" width="100%" src="/assets/posts/vocoder/waves_1-2.svg">
 </div>
@@ -45,7 +45,7 @@ Note that all the crests align. Summing them back up will result in our initial 
 <div>
 <img align="center" width="100%" src="/assets/posts/vocoder/waves_2-2.svg">
 </div>
-Note, that the crests align because we've applied the phase correction. Adding them up (while also correcting for the reduced window overlap) gives us a signal with the same pitch, but twice the duration:
+The crests are now aligned again because we've applied the phase correction. Adding them up (while also correcting for the reduced window overlap) gives us a signal with the same pitch, but twice the duration:
 <div>
 <img align="center" width="100%" src="/assets/posts/vocoder/waves_2.svg">
 </div>
@@ -76,7 +76,9 @@ If instead we run it through the phase vocoder with a stretch factor of 1.5, we 
 </audio>
 </figure>
 
-Below, I've included an annotated Python function that does all this. Getting a reasonably-sounding signal for a given stretch factor requires some tweaking of the window width and the step size with which we move the window through the signal. Among other factors, this depends on the frequency the signal is sampled at and the frequency components that are important. It doesn't work equally well with all types of input; short bursts as generated by drums, for instance, aren't properly interpolated when we stretch the windows. There are ways of improving this, for instance through an optimized calculation of the phase gradient before stretching a signal.[^2]
+Below, I've included an annotated Python function that does all this. Getting a reasonably-sounding signal for a given stretch factor requires some tweaking of the window width and the step size with which we move the window through the signal. Among other factors, this depends on the frequency the signal is sampled at and the frequency components that are important.
+
+The phase vocoder doesn't work equally well in all situations; short bursts as generated by drums, for instance, aren't properly interpolated when we stretch the windows. There are ways of improving this, for instance through an optimized calculation of the phase gradient before stretching a signal,[^2] or by using other algorithms altogether. 
 
 # Python code
 <details>
