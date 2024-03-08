@@ -5,6 +5,7 @@ categories: maths
 date: 2024-03-04 21:30:00 +0100
 hidden: false
 excerpt: YouTube and podcast apps appear to be able to change the playback speed of an audio signal without (dramatically) changing the pitch. How does this work? And could it be useful for musicians looking to change the playback speed of a sample during a performance? A look at the phase vocoder.
+image: /assets/posts/vocoder/static-image.png
 ---
 
 > [Punctuality and rhythm are] the same thing. It's knowing how long things take.
