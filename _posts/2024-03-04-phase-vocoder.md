@@ -125,7 +125,7 @@ def phase_vocoder(sig: np.ndarray,
     for n in range(N):
         i = n * a_a
         j = M + n * a_a
-        c[:, n] = np.fft.fft(fa[i:j] * g_a)
+        c[:, n] = np.fft.fft(sig[i:j] * g_a)
 
     amp_a = np.abs(c)
     phi_a = np.unwrap(np.angle(c), axis = 1)
