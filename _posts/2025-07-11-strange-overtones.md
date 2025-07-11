@@ -3,7 +3,7 @@ layout: post
 title: "Strange Overtones"
 category: physics
 date: 2025-07-11 13:00:00 +0200
-excerpt: "'You look bored,' his physics teacher once told a young Richard Feynman: 'Let me tell you something interesting.' He continued to divulge the secret of the principle of least action to him. Coincidentally, we use this very principle here to look at something interesting as well — something no one tells you about in undergrad: anharmonicity in the vibration of (piano) strings."
+excerpt: "'You look bored,' his physics teacher once told a young Richard Feynman: 'Let me tell you something interesting.' He continued to divulge the secret of the principle of least action to him. Coincidentally, we use this principle here to look at something interesting as well — something no one tells you about in undergrad! — anharmonicity in the vibration of (piano) strings."
 image: /assets/posts/strange-overtones/whitney.png
 ---
 
