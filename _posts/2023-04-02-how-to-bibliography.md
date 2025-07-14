@@ -4,7 +4,7 @@ categories: tutorial
 <!-- date: 2023-04-02 15:00:00 +0100 -->
 title: "How to bibliography"
 excerpt: "In which we discuss how to keep track of interesting references using ancient software, and use some Lisp to glue it all together, making life more pleasant altogether indeed."
-image: /assets/posts/bibliography/static-image.PNG
+image: /assets/posts/bibliography/static-image.png
 ---
 
 # Introduction
