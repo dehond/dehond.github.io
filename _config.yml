@@ -20,12 +20,12 @@
 
 title: Spontaneous Omissions
 author: Julius de Hond
-email: julius.dehond [at] pasqal [dot] com
+email: j.dehond [at] pasqal [dot] com
 description: >- # this means to ignore newlines until "baseurl:"
   A random walk through atomic physics and quantum stuff.
 domain: dehond.github.io
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dehond.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://jdeh.eu" # the base hostname & protocol for your site, e.g. http://example.com
 future: false
 #twitter_username: jekyllrb
 #github_username:  jekyll
