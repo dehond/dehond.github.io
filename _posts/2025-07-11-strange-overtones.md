@@ -242,9 +242,9 @@ Setting $EI = 0$ reduces this to the familiar wave equation for strings, while s
 }
 .figure {
   text-align: center;
-  padding: 1em 0;
+  <!-- padding: 1em 0; -->
 }
 .figure figcaption {
-  padding: 1em 0;
+  <!-- padding: 1em 0; -->
 }
 </style>
