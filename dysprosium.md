@@ -304,8 +304,6 @@ function adjustPlots() {
 
 [Download the .csv data](/attach/dy-dat/combined.csv)
 
-*Last update was on: {{ site.time }}*
-
 
 <a id="orgfa751a4"></a>
 
