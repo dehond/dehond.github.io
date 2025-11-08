@@ -20,4 +20,5 @@ permalink: /blogroll/
 
 # Misc
 - [Cory Doctorow](https://pluralistic.net/)
+- [Bert Hubert](https://berthub.eu/articles/)
 - [Tom7](http://radar.spacebar.org/)
