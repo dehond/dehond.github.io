@@ -62,3 +62,4 @@ header_pages:
   - index.markdown
   - dysprosium.md
   - posts.markdown
+  - blogroll.markdown
