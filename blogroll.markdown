@@ -1,14 +1,12 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: page
-title: Blogroll
+title: Links
 permalink: /blogroll/
 ---
 
 # Science & Physics
 - [Scott Aaronson](https://scottaaronson.blog/)
+- [Alexandre Dareau](https://adphys.eu)
 - [François-Marie Le Régent](https://francoismarieleregent.xyz/)
 - [Bastian Rieck](https://bastian.rieck.me/blog/)
 - [Louis Vignoli](https://lvignoli.eu/)
