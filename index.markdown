@@ -58,7 +58,7 @@ permalink: /
     <div id = "ho-figure">
         <div id = "ho-container"></div>
         <canvas id="3d-model"></canvas>
-        Figure: <a href="/2025/12/17/constant-caterer.html">Design for a vase</a> based on the quantum of action, $\hbar$. Here rendered with an angular momentum that far exceeds itself. Click and drag to change the Euler angles.
+        Figure: <a href="/physics/2025/12/17/constant-caterer.html">Design for a vase</a> based on the quantum of action, $\hbar$. Here rendered with an angular momentum that far exceeds itself. Click and drag to change the Euler angles.
     </div>
 </div>
 
