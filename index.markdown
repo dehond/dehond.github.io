@@ -4,10 +4,18 @@ display-title: false
 title: About
 permalink: /
 ---
+<script type="importmap">
+{
+"imports": {
+             "three": "https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.module.js",
+             "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.2/examples/jsm/"
+         }
+     }
+</script>
 
 <script src="/assets/d3.v7.min.js"></script>
 <script src="/assets/math.js"></script>
-<script src="/assets/pages/about/2d_ho.js" defer></script>
+<!-- <script src="/assets/pages/about/2d_ho.js" defer></script> -->
 
 <style>
     #about-container {
@@ -22,7 +30,7 @@ permalink: /
         flex-basis: 40%;
         flex-grow: 1;
     }
-    #ho-container {
+    #ho-container #3d-model {
         width: 250px;
         height: 250px;
         padding-bottom: 10px;
@@ -49,7 +57,8 @@ permalink: /
     </span>
     <div id = "ho-figure">
         <div id = "ho-container"></div>
-        Figure: A two-dimensional harmonic oscillator. Apply a potential with your pointer device.
+        <canvas id="3d-model"></canvas>
+        Figure: <a href="/2025/12/17/constant-caterer.html">Design for a vase</a> based on the quantum of action, $\hbar$. Here rendered with an angular momentum that far exceeds itself. Click and drag to change the Euler angles.
     </div>
 </div>
 
@@ -58,3 +67,5 @@ permalink: /
 2018 → '22 --- MIT --- Postdoc in the [Ketterle group](https://www.rle.mit.edu/cua_pub/ketterle_group/home.htm), working in the [BEC4](https://bec4.mit.edu) and [Dypole](https://dypole.mit.edu) labs \\
 2014 → '18 --- University of Amsterdam --- Ph.D. in the [Quantum Gases & Quantum Information group](https://iop.uva.nl/content/research-groups/qgqi/quantum-gases-quantum-information.html) \\
 2009 → '14 --- University of Twente --- B.Sc. & M.Sc in Physics
+
+<script type="module" src="/assets/pages/about/hbar.js"></script>
