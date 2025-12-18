@@ -17,7 +17,8 @@ scene.add(light);
 
 let element = document.getElementById("3d-model");
 const renderer = new THREE.WebGLRenderer({canvas : element, alpha : true});
-renderer.setSize( 500, 300 );
+let width = Math.min(500, element.parentElement.clientWidth);
+renderer.setSize( width, 300*width/500 );
 
 const loader = new STLLoader();
 const geometry = await loader.loadAsync( '/assets/posts/constant-caterer/hbar-compressed.stl' );
