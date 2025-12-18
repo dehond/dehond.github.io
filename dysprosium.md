@@ -13,17 +13,17 @@ This is an attempt at an overview of some of the relevant data for people lookin
 
 # Table of Contents
 
-1.  [Magnetic properties](#org2e91d00)
-    1.  [Magnetic dipolar interaction](#org44c003d)
-2.  [Electronic structure](#org29e26fc)
-    1.  [Bosonic Dy](#orgb78a43c)
-    2.  [Fermionic Dy](#org35d9aa4)
-    3.  [Important transitions](#org254b454)
-3.  [Dynamical polarizability](#orga796ada)
-4.  [Bibliography](#orgfa751a4)
+1.  [Magnetic properties](#orga421acc)
+    1.  [Magnetic dipolar interaction](#orgd8caeca)
+2.  [Electronic structure](#org981c1d3)
+    1.  [Bosonic Dy](#orge430fb0)
+    2.  [Fermionic Dy](#org40f932f)
+    3.  [Important transitions](#orgf692260)
+3.  [Dynamical polarizability](#orgace6f59)
+4.  [Bibliography](#orge5604bb)
 
 
-<a id="org2e91d00"></a>
+<a id="orga421acc"></a>
 
 # Magnetic properties
 
@@ -35,10 +35,10 @@ The coupling of a magnetic atom to an external magnetic field $\mathbf{B}$ is gi
 
 where $g_L = 1$ and $g_S \approx 2$ are the orbital and spin $g$ factors, respectively.
 
-Based on this, one would expect the bosonic ground state of dysprosium to have $g_J = 1.25$, but in reality it deviates because of its multielectron structure. Its been measured to be $g_J = 1.24159$ [<a href="#citeproc_bib_item_1">1</a>,<a href="#citeproc_bib_item_2">2</a>]. This means that the stretched ground state has a magnetic moment of $9.93\mu_B$, which results in a Zeeman shift of $\mu_{B}g_J = 1.7~\mathrm{MHz/G}$, per $m_J$.
+Based on this, one would expect the bosonic ground state of dysprosium to have $g_J = 1.25$, but in reality it deviates because of its multielectron structure. It's been measured to be $g_J = 1.24159$ [<a href="#citeproc_bib_item_1">1</a>,<a href="#citeproc_bib_item_2">2</a>]. This means that the stretched ground state has a magnetic moment of $9.93\mu_B$, which results in a Zeeman shift of $\mu_{B}g_J = 1.7~\mathrm{MHz/G}$, per $m_J$.
 
 
-<a id="org44c003d"></a>
+<a id="orgd8caeca"></a>
 
 ## Magnetic dipolar interaction
 
@@ -51,12 +51,12 @@ The dipole&#x2013;dipole interaction between two dipoles that are aligned with a
 Using $\mu=10\mu_{B}$ we find that, if two dysprosium atoms are 50 nm apart, and are aligned head-to-tail (i.e. they are maximally attractive), the interaction is 20 kHz. This falls off with the cube of the interparticle separation, so in an optical lattice with a period of 532 nm (where the separation is ten times larger), the interaction will be 20 Hz. 
 
 
-<a id="org29e26fc"></a>
+<a id="org981c1d3"></a>
 
 # Electronic structure
 
 
-<a id="orgb78a43c"></a>
+<a id="orge430fb0"></a>
 
 ## Bosonic Dy
 
@@ -65,14 +65,14 @@ The bosonic isotopes ($^{162}\rm{Dy}$ and $^{164}\rm{Dy}$) have no nuclear spin,
 This can be seen as follows: the $s$ shell is filled, and there are 10 electrons in the $f$ shell, which can accommodate 14 electrons in total. Hence per Hund's first rule: $S = 2$. The total orbital angular momentum from this shell is made up by the unpaired electrons, which leads to $L = 1 + 2 + 3 = 6$, which is denoted by $I$. Finally, since the shell is more than half filled, we have by Hund's third rule that the ground state maximizes $J$, and hence $J = 8$.
 
 
-<a id="org35d9aa4"></a>
+<a id="org40f932f"></a>
 
 ## Fermionic Dy
 
 The fermionic isotopes ($^{161}\rm{Dy}$ and $^{163}\rm{Dy}$) have nuclear spins $I = 5/2$. The hyperfine interaction coefficients vary between isotopes, and so does the ground states. Generally, though, the hyperfine ground state levels satisfy $11/2 \leq F \leq 21/2$.
 
 
-<a id="org254b454"></a>
+<a id="orgf692260"></a>
 
 ## Important transitions
 
@@ -256,7 +256,7 @@ Another convenient example is the $6s6p$ triplet ($^{3}P^{o}_{J}$), which can ma
 For the transitions involving the $4f$ electrons things are a little more opaque. The ones shown in the table above have the remaining 9 electrons in that shell in a $^{6}H^{o}$ configuration, with $L = 5$ and $S = 5/2$. This can couple in a host of different ways to the $5d6s^{2}$ electrons with $L = 2$ and $S = 1/2$, giving rise to a forest of lines, some of which are included above. 
 
 
-<a id="orga796ada"></a>
+<a id="orgace6f59"></a>
 
 # Dynamical polarizability
 
@@ -305,7 +305,7 @@ function adjustPlots() {
 [Download the .csv data](/attach/dy-dat/combined.csv)
 
 
-<a id="orgfa751a4"></a>
+<a id="orge5604bb"></a>
 
 # Bibliography
 
