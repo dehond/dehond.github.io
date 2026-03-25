@@ -14,4 +14,4 @@ David Griffiths, asked by the journal whether he indeed felt that way, responded
 
 <!--more-->
 
-I've always been uncomfortable with the "shut up and calculate"-school of modern physics. It's very difficult to build an intuition for physics problems based on calculations alone, and it starts to verge on the impractical if you cannot reason your way around a problem without a calculator or Mathematica kernel at hand. Indeed, what makes Griffiths' books and papers so appreciated is that he doesn't shy away from using the theorems and equations to tell a story.
+I, for one, do not care for the "shut up and calculate"-school of modern physics. It's very difficult to build an intuition for physics problems based on calculations alone, and it starts to verge on the impractical if you cannot reason your way around a problem without a calculator or Mathematica kernel at hand. Indeed, what makes Griffiths' books and papers so appreciated is that he doesn't shy away from using the theorems and equations to tell a story.
