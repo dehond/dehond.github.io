@@ -27,7 +27,12 @@ layout: default
         {%- endif -%}
 
         {%- if site.show_excerpts -%}
+        <p>
           {{ post.excerpt }}
+        </p>
+        <p>
+          <a href="{{post.url | relative_url}}">➫ <em>Continue reading</em></a>
+        </p>
         {%- endif -%}
       </li>
       {% endif %}

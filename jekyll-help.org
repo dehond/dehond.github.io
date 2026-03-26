@@ -6,3 +6,6 @@ bundle exec jekyll serve
 
 * Invisible posts
 To hide a published post, set ~hidden: true~ in the header data.
+
+* Updating theme defaults
+Find the Ruby gem location using ~bundle info --path minima~. All the defaults are stored there. Copy the ones you want to change over to the project folder.
