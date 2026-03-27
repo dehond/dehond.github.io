@@ -48,3 +48,21 @@ blockquote {
     font: inherit !important;
     letter-spacing: 0px !important;
 }
+
+#title-container {
+    position: relative;
+    z-index: 1;
+}
+.site-title:hover{
+    text-decoration: none;
+}
+#title-laser {
+    position: absolute;
+    top: 17px;
+    left: -46px;
+    visibility: hidden;
+    z-index: -1;
+}
+#title-laser:hover {
+    visibility: visible;
+}
