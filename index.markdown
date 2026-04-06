@@ -48,9 +48,7 @@ permalink: /
 <div id = "about-container">
     <span id = "about">
     <h3>Hi, I'm Julius</h3>
-    <p>I'm an atomic physicist currently working at Pasqal in Amsterdam, The Netherlands.</p>
-    <p>We are working to build a quantum computer based on neutral atoms and Rydberg interactions. I work in a team that forms the link between the hardware on the one hand, and the algorithms on the other.</p>
-    <!-- <p>I work in labs where we try to simulate uncontrollable and complicated quantum mechanical systems using controllable and (slightly) less complicated ones.</p> -->
+    <p>I'm an atomic physicist currently working at The Hague University of Applied Sciences in Delft, The Netherlands.</p>
 
     <p>On the <a href="/blog/">blog on this website</a> I hope to share some of the interesting things I learn in and outside of the lab, which typically don't find their way into papers.</p>
     <p>During my time as a graduate student I contributed to De Fusie, a (now defunct) online outlet for young academics. I've collected <a href="/fusie/">some of my contributions here</a> as well.</p>
@@ -63,7 +61,8 @@ permalink: /
 </div>
 
 ### Now & then
-2022 → present --- [Pasqal](https://pasqal.com/) --- Hardware/Software Interface Quantum Engineer \\
+2026 → present --- [THUAS](https://www.dehaagsehogeschool.nl/) --- Researcher Applied Quantum Technologies \\
+2022 → 2026 --- [Pasqal](https://pasqal.com/) --- Hardware/Software Interface Quantum Engineer \\
 2018 → '22 --- MIT --- Postdoc in the [Ketterle group](https://www.rle.mit.edu/cua_pub/ketterle_group/home.htm), working in the [BEC4](https://bec4.mit.edu) and [Dypole](https://dypole.mit.edu) labs \\
 2014 → '18 --- University of Amsterdam --- Ph.D. in the [Quantum Gases & Quantum Information group](https://iop.uva.nl/content/research-groups/qgqi/quantum-gases-quantum-information.html) \\
 2009 → '14 --- University of Twente --- B.Sc. & M.Sc in Physics
