@@ -2,7 +2,7 @@
 layout: post
 title: "Van zevenzeefje tot eenheidsworst"
 categories: fusie
-date: 2016-02-19 00:00:00 +0100
+date: 2015-09-11 00:00:00 +0100
 hidden: false
 excerpt: "Steeds meer masteropleidingen hanteren een selectieprocedure en kijken daarin alleen maar naar het cijfer. Een slecht plan, wat ten nadele komt van diversiteit in de collegezaal."
 ---
