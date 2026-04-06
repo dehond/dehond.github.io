@@ -2,7 +2,7 @@
 layout: post
 title: On being (not || sorta) good at something
 category: thought
-excerpt: Most physicists don’t enjoy writing, and don’t want to spend a lot of time wordsmithing away at sentences until they sound just right. On its own, this is not a problem; you can be a great storyteller while not caring much for written text. Should scientists get the chatbot to do the writing for them, though? I don't think so. Telling a story about whatever it is you do, ultimately leaves you with a better understanding of yourself, your audience, and your work.
+excerpt: Most physicists don’t enjoy writing, and don’t want to spend a lot of time wordsmithing away at sentences until they sound just right. On its own, this is not a problem; you can be a great storyteller while not caring much for written text. Should scientists get the chatbot to do the writing for them, though? I don't think so. Telling a story about whatever it is you do ultimately leaves you with a better understanding of yourself, your audience, and your work.
 date: 2026-04-06 19:30:00 +0200
 image: /assets/posts/kinda-good/sheet.png
 ---
