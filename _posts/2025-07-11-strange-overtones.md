@@ -27,7 +27,7 @@ First I thought the sampling frequency I recorded at must have been slightly dif
 ## Good Vibrations
 The typical derivation of the equation of motion for a vibrating string goes something like this: the string is fixed on both ends, and held under tension by some force $T$. Under the assumption of a vibration amplitude that's small compared to the wavelength, the vertical restoring force on a string element $dx$ can be related to tangent through the vertical angles on either end, $\alpha$ and $\beta$ (see figure below).
 
-<div class="figure">
+<div class="illustration">
 <img width="70%" src="/assets/posts/strange-overtones/string-vibration.svg">
 <figcaption>Force diagram typically used to derive the eigenmodes of a vibrating string.</figcaption>
 </div>
@@ -55,7 +55,7 @@ $$
 
 which we should integrate over the entire cross-section and length of the wire to get the total stretching energy. We can obtain the strain $\varepsilon$ from a geometrical argument (also see the figure below) by considering a wire element $dx$. When this is being bent, there's no net force pushing this left or right, meaning the stresses on the cross-section cancel, and its integral is zero: $\int \sigma \, dA = 0$. Furthermore, if the direction of bending is along the vertical $y$ axis, $\sigma = \sigma(y)$. Finally, if all deformations are small the stress is linear, meaning there is some $y_0$ such that $\sigma \propto (y-y_0)$. This $y_0$ (together with the out-of-plane axis) defines the 'plane of bending' where the stress vanishes [3]. Without loss of generality, we translate the y axis such that $y_0 = 0$ without loss of generality.
 
-<div class="figure">
+<div class="illustration">
 <img width="70%" src="/assets/posts/strange-overtones/bending.svg">
 <figcaption>Diagram illustrating relevant quantities for calculating the bending energy of an arbitrary wire $w(x)$ with arbitrary cross-section $A$. The inset shows a zoom-in on a wire element $dx$, indicating the plane of bending with the horizontal, dashed line. Note that, since the inset focuses on an extremum for clarity, the signs of $\alpha$ and $\beta$ are opposite.</figcaption>
 </div>

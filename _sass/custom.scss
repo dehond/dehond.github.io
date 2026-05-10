@@ -2,12 +2,15 @@ $background-color: #f0f0f0;
 $base-font-size: 17px;
 /* $base-font-family: 'Signika Negative', serif; */
 
-$base-font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
-$base-font-weight: 500;
+$base-font-family: Avenir, sans-serif, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+$base-font-weight: 400;
+$base-line-height: 1.6;
+$base-font-size: 1.0em;
 
 .site-title {
   font-family: Cabin, sans-serif;
   font-style: italic;
+  line-height: 2.2em !important;
 }
 
 .post-title {
@@ -65,4 +68,15 @@ blockquote {
 }
 #title-laser:hover {
     visibility: visible;
+}
+.illustration {
+    text-align: center;
+    padding-bottom: 1lh;
+    padding-top: 0.5lh;
+}
+.illustration img {
+    padding-bottom: 0.5lh;
+}
+.illustration figcaption {
+    text-align: justify;
 }
