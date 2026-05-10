@@ -3,7 +3,7 @@ layout: post
 title: The Catenary in the Coal Mine
 category: physics
 image: /assets/posts/arches/header.png
-excerpt: While out on a lark a few months ago, we bumped into a vestige of the colonial history of The Netherlands. Triggered by some structurally curious elements, a grand tour through history, engineering, and the history of engineering ensued. Enter: compressed catenaries, colonial fanclubs, stiff slabs, and Pope Benedict XIV.
+excerpt: "While out on a lark a few months ago, we bumped into a vestige of the colonial history of The Netherlands. Triggered by some structurally curious elements, a grand tour through history, engineering, and the history of engineering ensued. Enter: compressed catenaries, colonial fanclubs, stiff slabs, and Pope Benedict XIV."
 date: 2026-05-10 20:00:00 +0200
 ---
 
