@@ -16,7 +16,9 @@ const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
 scene.add(light);
 
 let element = document.getElementById("3d-model");
-const renderer = new THREE.WebGLRenderer({canvas : element, alpha : true});
+window.renderer = new THREE.WebGLRenderer({canvas : element, alpha : true});
+const renderer = window.renderer;
+// const renderer = new THREE.WebGLRenderer({canvas : element, alpha : true});
 renderer.setSize( 300, 180 );
 
 const loader = new STLLoader();
