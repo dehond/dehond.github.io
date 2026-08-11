@@ -8,7 +8,6 @@ It has become a platitude to lament the decline of the Internet of Yore. Platfor
 # Science & Physics
 - [Scott Aaronson](https://scottaaronson.blog/)
 - [Alexandre Dareau](https://adphys.eu)
-- [Francisco Ponciano](http://www.fsponciano.com/)
 - [François-Marie Le Régent](https://francoismarieleregent.xyz/)
 - [Bastian Rieck](https://bastian.rieck.me/blog/)
 - [Sam S.](https://samman350.github.io/)
